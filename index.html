@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agency Profile - Fun, Interactive & Professional</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPink: '#EE00C6',
+            brandPinkSoft: '#FF99EE',
+            brandCyan: '#009FEE',
+            brandCyanSoft: '#99DDFF',
+            brandOrange: '#F99D2A',
+            brandOrangeSoft: '#FFDE59',
+            brandLime: '#9FEE00',
+            brandLimeSoft: '#DDFF99',
+            brandPurple: '#4F00EE',
+            brandPurpleSoft: '#BB99FF',
+            darkBg: '#090D16',
+          },
+          animation: {
+            'float': 'float 4s ease-in-out infinite',
+            'float-delayed': 'float 4s ease-in-out 2s infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Gradient Glow Effect */
+    .glow-pink {
+      box-shadow: 0 0 35px -5px rgba(238, 0, 198, 0.35);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 35px -5px rgba(0, 159, 238, 0.35);
+    }
+    .glow-orange {
+      box-shadow: 0 0 35px -5px rgba(249, 157, 42, 0.35);
+    }
+    .glow-lime {
+      box-shadow: 0 0 35px -5px rgba(159, 238, 0, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+  <!-- Floating Ambient Lights -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-brandPink/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow"></div>
+  <div class="fixed bottom-10 right-10 w-96 h-96 bg-brandCyan/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed top-1/2 right-1/4 w-80 h-80 bg-brandPurple/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Navbar Interaktif -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      
+      <!-- Brand Logo with Hover Spin Effect -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brandPink to-brandPurple flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-brandPink/30 group-hover:rotate-12 transition-transform duration-300">
+          E
+        </div>
+        <span class="font-black text-2xl tracking-tight text-white group-hover:tracking-wider transition-all duration-300">
+          AGENCY<span class="text-transparent bg-clip-text bg-gradient-to-r from-brandPink to-brandCyan">PRO</span>
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
+        <a href="index.html" class="text-brandPink relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandPink">Home</a>
+        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition duration-200">Tentang Kami</a>
+        <a href="services.html" class="text-slate-300 hover:text-brandOrange transition duration-200">Layanan</a>
+        <a href="portfolio.html" class="text-slate-300 hover:text-brandLime transition duration-200">Portofolio</a>
+        <a href="join-talent.html" class="px-3.5 py-1.5 rounded-full bg-brandPurple/20 border border-brandPurple text-brandPurpleSoft hover:bg-brandPurple hover:text-white transition duration-300 flex items-center gap-2">
+          <i class="fas fa-sparkles text-xs"></i> Join Talent
+        </a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="contact.html" class="relative group overflow-hidden bg-brandPink text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105">
+          <span class="relative z-10 flex items-center gap-2">
+            <i class="fab fa-whatsapp text-lg"></i> Let's Talk!
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-brandPink via-brandPurple to-brandCyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-brandPink p-2">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-bold text-brandPink">Home</a>
+      <a href="about.html" class="block font-semibold text-slate-300 hover:text-brandCyan">Tentang Kami</a>
+      <a href="services.html" class="block font-semibold text-slate-300 hover:text-brandOrange">Layanan</a>
+      <a href="portfolio.html" class="block font-semibold text-slate-300 hover:text-brandLime">Portofolio</a>
+      <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
+      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Let's Talk!</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Fun, Vibrant, Floating Elements) -->
+  <section class="pt-36 pb-24 lg:pt-48 lg:pb-36 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <!-- Interactive Badge -->
+      <div data-aos="fade-down" data-aos-duration="800" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900 border border-brandPink/40 text-brandPinkSoft text-xs font-black tracking-wide uppercase mb-8 shadow-inner">
+        <span class="w-2.5 h-2.5 rounded-full bg-brandLime animate-ping"></span>
+        We Build Moments & Provide Powerhouse Crews!
+      </div>
+
+      <!-- Main Animated Headline -->
+      <h1 data-aos="zoom-in" data-aos-duration="1000" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none max-w-5xl mx-auto mb-8 text-white">
+        Bikin Event Lebih <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandPink via-brandOrange to-brandLime">Hidup</span>, Booth Lebih <span class="text-brandCyan underline decoration-wavy decoration-brandPink">Standout</span>.
+      </h1>
+
+      <p data-aos="fade-up" data-aos-delay="200" class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
+        Partner komplit untuk <span class="text-white font-semibold">Outsourcing Manpower</span> (SPG, SPB, TL), <span class="text-white font-semibold">Produksi Booth</span> spektakuler, hingga eksekusi <span class="text-white font-semibold">Brand Activation</span> skala besar.
+      </p>
+
+      <!-- Action Buttons with Bounce Effects -->
+      <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+        <a href="contact.html" class="w-full sm:w-auto bg-gradient-to-r from-brandPink to-brandPurple text-white px-9 py-4 rounded-2xl font-black transition duration-300 hover:scale-110 glow-pink flex items-center justify-center gap-3">
+          Konsultasi Proyek Kamu <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="portfolio.html" class="w-full sm:w-auto bg-slate-900/90 text-slate-200 border border-slate-700 hover:border-brandCyan hover:text-brandCyan px-8 py-4 rounded-2xl font-bold transition duration-300 hover:scale-105">
+          Eksplor Galeri Event
+        </a>
+      </div>
+
+      <!-- Floating Stat Badges -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div data-aos="fade-up" data-aos-delay="500" class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md hover:border-brandPink transition duration-300 hover:-translate-y-1">
+          <p class="text-3xl font-black text-brandPink">1.500+</p>
+          <p class="text-xs text-slate-400 mt-1 font-semibold">Database Talent</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="600" class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md hover:border-brandCyan transition duration-300 hover:-translate-y-1">
+          <p class="text-3xl font-black text-brandCyan">100+</p>
+          <p class="text-xs text-slate-400 mt-1 font-semibold">Event Sukses</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="700" class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md hover:border-brandOrange transition duration-300 hover:-translate-y-1">
+          <p class="text-3xl font-black text-brandOrange">99.8%</p>
+          <p class="text-xs text-slate-400 mt-1 font-semibold">SOP Disiplin</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="800" class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md hover:border-brandLime transition duration-300 hover:-translate-y-1">
+          <p class="text-3xl font-black text-brandLime">Fast</p>
+          <p class="text-xs text-slate-400 mt-1 font-semibold">Deployment Tim</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Layanan Utama: Fun 3D-Look Cards -->
+  <section class="py-24 bg-slate-900/50 relative border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div data-aos="fade-right" class="max-w-xl mb-16">
+        <span class="text-brandCyan font-black text-xs uppercase tracking-widest bg-cyan-950/60 border border-brandCyan/40 px-3 py-1 rounded-full">Core Superpowers</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-4">Apa yang Bisa Kita Eksekusi?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Manpower (Cyan Focus) -->
+        <div data-aos="fade-up" data-aos-delay="100" class="group relative rounded-3xl bg-slate-900/80 border border-slate-800 p-8 hover:border-brandCyan transition-all duration-500 hover:-translate-y-2 hover:glow-cyan">
+          <div class="w-16 h-16 rounded-2xl bg-brandCyan/10 border border-brandCyan/30 text-brandCyan flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition duration-300">
+            <i class="fas fa-users-rays"></i>
+          </div>
+          <span class="text-xs font-black text-brandCyan uppercase tracking-widest">01. Staffing</span>
+          <h3 class="text-2xl font-black text-white mt-2 mb-3">Manpower & Sales Force</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Penyedia SPG, SPB, Team Leader tangguh, Usher, dan Event Crew yang siap diterjunkan dengan standar grooming & briefing presisi.
+          </p>
+          <a href="services.html#manpower" class="inline-flex items-center gap-2 text-sm font-bold text-brandCyan hover:gap-3 transition-all">
+            Lihat Spesifikasi Talent <i class="fas fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 2: Booth Production (Orange Focus) -->
+        <div data-aos="fade-up" data-aos-delay="200" class="group relative rounded-3xl bg-slate-900/80 border border-slate-800 p-8 hover:border-brandOrange transition-all duration-500 hover:-translate-y-2 hover:glow-orange">
+          <div class="w-16 h-16 rounded-2xl bg-brandOrange/10 border border-brandOrange/30 text-brandOrange flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:-rotate-6 transition duration-300">
+            <i class="fas fa-cubes-stacked"></i>
+          </div>
+          <span class="text-xs font-black text-brandOrange uppercase tracking-widest">02. Fabrication</span>
+          <h3 class="text-2xl font-black text-white mt-2 mb-3">Booth & Stage Production</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Fabrikasi booth pameran custom, backdrop 3D, stage set, instalasi lighting profesional, hingga display promo yang kokoh & eye-catching.
+          </p>
+          <a href="services.html#booth" class="inline-flex items-center gap-2 text-sm font-bold text-brandOrange hover:gap-3 transition-all">
+            Lihat Karya Booth <i class="fas fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Card 3: Activation (Lime Focus) -->
+        <div data-aos="fade-up" data-aos-delay="300" class="group relative rounded-3xl bg-slate-900/80 border border-slate-800 p-8 hover:border-brandLime transition-all duration-500 hover:-translate-y-2 hover:glow-lime">
+          <div class="w-16 h-16 rounded-2xl bg-brandLime/10 border border-brandLime/30 text-brandLime flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition duration-300">
+            <i class="fas fa-bolt-lightning"></i>
+          </div>
+          <span class="text-xs font-black text-brandLime uppercase tracking-widest">03. Activation</span>
+          <h3 class="text-2xl font-black text-white mt-2 mb-3">Event & Brand Activation</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Eksekusi roadshow mall, games interaktif pengunjung, sampling campaign, perizinan venue, dan manajemen kerumunan yang tertata rapi.
+          </p>
+          <a href="services.html#activation" class="inline-flex items-center gap-2 text-sm font-bold text-brandLime hover:gap-3 transition-all">
+            Lihat Eksekusi Event <i class="fas fa-chevron-right text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Talent CTA Box -->
+  <section class="py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-aos="flip-up" class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-brandPurple via-purple-900 to-slate-900 border border-brandPurple/50 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="relative z-10 text-center md:text-left">
+          <span class="text-xs font-black text-brandPinkSoft uppercase tracking-widest">Recruitment Open</span>
+          <h3 class="text-3xl font-black text-white mt-1">Kamu SPG, SPB, atau Event Crew?</h3>
+          <p class="text-purple-200 text-sm mt-2 max-w-md">Gabung ke dalam database talent kami dan dapatkan tawaran project reguler maupun event bergengsi!</p>
+        </div>
+        <div class="relative z-10">
+          <a href="join-talent.html" class="inline-flex items-center gap-2 bg-white text-brandPurple px-7 py-3.5 rounded-2xl font-black text-sm hover:scale-110 transition duration-300 shadow-lg">
+            Daftar Sekarang <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Fun & Modern -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-brandPink flex items-center justify-center text-white font-bold text-lg">E</div>
+          <span class="font-black text-2xl text-white">AGENCY<span class="text-brandPink">PRO</span></span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
+          Operasional lapangan tanpa ribet, booth presisi, dan personil terbaik untuk setiap event Anda.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Halaman</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="about.html" class="hover:text-brandPink transition">Tentang Kami & Founder</a></li>
+          <li><a href="services.html" class="hover:text-brandCyan transition">Detail Layanan</a></li>
+          <li><a href="portfolio.html" class="hover:text-brandOrange transition">Portofolio Proyek</a></li>
+          <li><a href="join-talent.html" class="hover:text-brandPurpleSoft transition">Registrasi Talent</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
+        <p class="text-xs text-slate-400 mb-2"><i class="fab fa-whatsapp text-brandLime mr-2"></i> WhatsApp Konsultasi</p>
+        <p class="text-xs text-slate-400"><i class="fas fa-envelope text-brandPink mr-2"></i> info@agencypro.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Init AOS Script -->
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
