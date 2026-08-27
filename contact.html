@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hubungi Kami</title>
-  
+  <title>Hubungi Kami - SENA Event Agency</title>
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            brandPink: '#EE00C6',
+            brandPink: '#FF007A',
             brandPinkSoft: '#FF99EE',
-            brandCyan: '#009FEE',
+            brandCyan: '#00D2FF',
             brandCyanSoft: '#99DDFF',
-            brandOrange: '#F99D2A',
+            brandOrange: '#FF7A00',
             brandOrangeSoft: '#FFDE59',
-            brandLime: '#9FEE00',
+            brandLime: '#A6FF00',
             brandLimeSoft: '#DDFF99',
-            brandPurple: '#4F00EE',
-            brandPurpleSoft: '#BB99FF',
+            brandPurple: '#7B2CBF',
+            brandPurpleSoft: '#C77DFF',
           }
         }
       }
@@ -37,119 +38,190 @@
   </script>
 
   <style>
-    .glow-pink { box-shadow: 0 0 35px -5px rgba(238, 0, 198, 0.4); }
+    .glow-pink {
+      box-shadow: 0 0 35px -5px rgba(255, 0, 122, 0.35);
+    }
   </style>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Theme Script (Default Dark, persistent via localStorage) -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+<body
+  class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white transition-colors duration-300">
 
   <!-- Ambient Lights -->
-  <div class="fixed top-10 left-10 w-96 h-96 bg-brandPink/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-  <div class="fixed bottom-10 right-10 w-96 h-96 bg-brandCyan/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div
+    class="fixed top-10 left-10 w-96 h-96 bg-brandPink/10 dark:bg-brandPink/15 rounded-full blur-3xl pointer-events-none -z-10">
+  </div>
+  <div
+    class="fixed bottom-10 right-10 w-96 h-96 bg-brandCyan/10 dark:bg-brandCyan/15 rounded-full blur-3xl pointer-events-none -z-10">
+  </div>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80">
+  <!-- ================= NAVBAR ================= -->
+  <nav
+    class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-      
-      <!-- Brand Logo -->
+
+      <!-- Brand Logo Auto Switch -->
       <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 sm:h-9 w-auto object-contain">
+        <img src="assets/images/logosena.png" alt="SENA Logo"
+          class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 dark:hidden">
+        <img src="assets/images/logosenaputih.png" alt="SENA Logo"
+          class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 hidden dark:block">
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
-        <a href="index.html" class="text-slate-300 hover:text-brandPink transition">Home</a>
-        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
-        <a href="services.html" class="text-slate-300 hover:text-brandOrange transition">Layanan</a>
-        <a href="portfolio.html" class="text-slate-300 hover:text-brandLime transition">Portofolio</a>
-        <a href="join-talent.html" class="px-3.5 py-1.5 rounded-full bg-brandPurple/20 border border-brandPurple text-brandPurpleSoft hover:bg-brandPurple hover:text-white transition duration-300 flex items-center gap-2">
-          <i class="fas fa-sparkles text-xs"></i> Join Talent
+      <div class="hidden lg:flex items-center space-x-7 text-sm font-bold">
+        <a href="index.html"
+          class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition duration-200">Home</a>
+        <a href="about.html"
+          class="text-slate-800 dark:text-slate-200 hover:text-brandCyan transition duration-200">Tentang Kami</a>
+        <a href="services.html"
+          class="text-slate-800 dark:text-slate-200 hover:text-brandOrange transition duration-200">Layanan</a>
+        <a href="portfolio.html"
+          class="text-slate-800 dark:text-slate-200 hover:text-brandLime transition duration-200">Portofolio</a>
+        <a href="career.html"
+          class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition duration-200">Karir</a>
+        <a href="join-talent.html"
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 dark:bg-brandPurple/20 border border-brandPurple text-brandPurple dark:text-brandPurpleSoft font-bold hover:bg-brandPurple hover:text-white transition duration-300">
+          <i class="fas fa-sparkles text-xs"></i>
+          <span>Join Talent</span>
         </a>
       </div>
 
-      <div class="hidden sm:flex items-center gap-4">
-        <a href="contact.html" class="bg-brandPink text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brandPink/40">
-          <i class="fab fa-whatsapp text-lg mr-1.5"></i> Hubungi Kami
+      <!-- Action Buttons + Toggle Theme Desktop -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="contact.html"
+          class="relative group overflow-hidden bg-brandPink text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-brandPink/30 transition duration-300 scale-105 ring-2 ring-brandPink/50">
+          <span class="relative z-10 flex items-center gap-2">
+            <i class="fab fa-whatsapp text-base"></i> Hubungi Kami!
+          </span>
         </a>
+
+        <!-- Toggle Theme Button -->
+        <button onclick="toggleTheme()" aria-label="Toggle Theme"
+          class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition">
+          <i class="fas fa-moon text-amber-400 text-sm theme-icon"></i>
+        </button>
       </div>
 
-      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-brandPink p-2">
+      <!-- Hamburger Button Mobile -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-800 dark:text-white hover:text-brandPink p-2">
         <i class="fas fa-bars text-2xl"></i>
       </button>
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
-      <a href="index.html" class="block font-medium text-slate-300 hover:text-brandPink">Home</a>
-      <a href="about.html" class="block font-medium text-slate-300 hover:text-brandCyan">Tentang Kami</a>
-      <a href="services.html" class="block font-medium text-slate-300 hover:text-brandOrange">Layanan</a>
-      <a href="portfolio.html" class="block font-medium text-slate-300 hover:text-brandLime">Portofolio</a>
-      <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
-      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Hubungi Kami</a>
+    <div id="mobileMenu"
+      class="hidden lg:hidden bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-4 shadow-xl">
+      <a href="index.html" class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink">Home</a>
+      <a href="about.html" class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandCyan">Tentang
+        Kami</a>
+      <a href="services.html"
+        class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandOrange">Layanan</a>
+      <a href="portfolio.html"
+        class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandLime">Portofolio</a>
+      <a href="career.html"
+        class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink">Karir</a>
+      <a href="join-talent.html" class="block font-bold text-brandPurple dark:text-brandPurpleSoft">Join Talent</a>
+
+      <!-- Tombol Toggle Mobile -->
+      <button onclick="toggleTheme()"
+        class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs">
+        <span>Mode Tampilan</span>
+        <i class="fas fa-moon text-amber-400 text-base theme-icon"></i>
+      </button>
+
+      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Let's Talk!</a>
     </div>
   </nav>
 
-  <!-- Header Banner -->
+  <!-- ================= HEADER BANNER ================= -->
   <section class="pt-36 pb-12 lg:pt-44 lg:pb-16 text-center relative">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span data-aos="fade-down" class="text-xs font-black text-brandPink uppercase tracking-widest bg-pink-950/60 border border-brandPink/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+      <span data-aos="fade-down"
+        class="text-xs font-black text-brandPink uppercase tracking-widest bg-pink-100 dark:bg-pink-950/60 border border-brandPink/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
         Let's Connect & Collaborate
       </span>
-      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-white tracking-tight">
-        Mulai Diskusi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandPink via-brandOrange to-brandCyan">Proyek Event Anda</span>.
+      <h1 data-aos="zoom-in"
+        class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+        Mulai Diskusi <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-brandPink via-brandOrange to-brandCyan">Proyek
+          Event Anda</span>.
       </h1>
-      <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-base sm:text-lg mt-5 leading-relaxed max-w-2xl mx-auto">
-        Kirimkan rincian kebutuhan manpower, jadwal produksi booth, atau rencana aktivasi brand Anda. Kami siap merespons dengan cepat dan terperinci.
+      <p data-aos="fade-up" data-aos-delay="200"
+        class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-5 leading-relaxed max-w-2xl mx-auto font-normal">
+        Kirimkan rincian kebutuhan manpower, jadwal produksi booth, atau rencana aktivasi brand Anda. Tim representatif
+        kami siap merespons dengan cepat dan terperinci.
       </p>
     </div>
   </section>
 
-  <!-- Main Contact Section -->
+  <!-- ================= MAIN CONTACT SECTION ================= -->
   <section class="pb-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-12 gap-10">
-        
+
         <!-- Left Column: Contact Cards & Office Details -->
         <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
-          
+
           <!-- Quick WhatsApp Direct Card -->
-          <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 glow-pink relative overflow-hidden">
-            <div class="w-12 h-12 rounded-2xl bg-brandPink/20 text-brandPink flex items-center justify-center text-2xl mb-5">
+          <div
+            class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-xl glow-pink relative overflow-hidden">
+            <div
+              class="w-12 h-12 rounded-2xl bg-pink-100 dark:bg-brandPink/20 text-brandPink flex items-center justify-center text-2xl mb-5">
               <i class="fab fa-whatsapp"></i>
             </div>
-            <h3 class="text-xl font-black text-white mb-2">Fast Response WhatsApp</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Butuh penawaran harga cepat atau koordinasi tim mendadak? Hubungi representatif kami langsung melalui chat WhatsApp resmi.
+            <h3 class="text-xl font-black text-slate-900 dark:text-white mb-2">Fast Response WhatsApp</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6 font-normal">
+              Butuh penawaran harga cepat atau koordinasi tim mendadak? Hubungi representatif kami langsung melalui chat
+              WhatsApp resmi.
             </p>
-            <a href="https://wa.me/628111199400?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20kebutuhan%20event." target="_blank" class="inline-flex items-center gap-2.5 bg-brandPink hover:brightness-110 text-white font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition">
-              Chat WhatsApp Sekarang <i class="fas fa-external-link-alt text-[10px]"></i>
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin%20SENA,%20saya%20ingin%20konsultasi%20kebutuhan%20event."
+              target="_blank"
+              class="inline-flex items-center gap-2.5 bg-brandPink hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition shadow-lg shadow-brandPink/30 hover:scale-105">
+              <span>Chat WhatsApp Sekarang</span>
+              <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
             </a>
           </div>
 
           <!-- Email & Office Hours -->
           <div class="grid sm:grid-cols-2 gap-4">
-            <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div
+              class="p-6 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
               <i class="fas fa-envelope text-brandCyan text-xl mb-3"></i>
-              <h4 class="text-sm font-bold text-white mb-1">Email Resmi</h4>
-              <p class="text-xs text-slate-400">senapro.sba@gmail.com</p>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Email Resmi</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-normal">senapro.sba@gmail.com</p>
             </div>
-            <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+            <div
+              class="p-6 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none">
               <i class="fas fa-clock text-brandLime text-xl mb-3"></i>
-              <h4 class="text-sm font-bold text-white mb-1">Jam Operasional</h4>
-              <p class="text-xs text-slate-400">Senin - Minggu</p>
-              <p class="text-xs text-slate-400">08.00 - 17.00 WIB</p>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Jam Operasional</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-normal">Senin - Minggu</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-normal">08.00 - 17.00 WIB</p>
             </div>
           </div>
 
           <!-- Office Location Card -->
-          <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-start gap-4">
-            <div class="w-10 h-10 rounded-xl bg-brandOrange/20 text-brandOrange flex items-center justify-center shrink-0">
+          <div
+            class="p-6 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-sm dark:shadow-none flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-orange-100 dark:bg-brandOrange/20 text-brandOrange flex items-center justify-center shrink-0">
               <i class="fas fa-map-location-dot"></i>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-white mb-1">Kantor Operasional & Workshop</h4>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Kantor Operasional & Workshop</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-normal">
                 Jl. H. Mawi Gg. Serius, Waru, Kec. Parung, Kabupaten Bogor, Jawa Barat 16330
               </p>
             </div>
@@ -159,42 +231,60 @@
 
         <!-- Right Column: RFQ & Project Inquiry Form -->
         <div class="lg:col-span-7" data-aos="fade-left">
-          <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-10 shadow-2xl relative">
-            
-            <div class="mb-8 border-b border-slate-800 pb-5">
-              <span class="text-xs font-black text-brandOrange uppercase tracking-widest">B2B Consultation</span>
-              <h2 class="text-2xl sm:text-3xl font-black text-white mt-1">Form Pengajuan Proyek</h2>
-              <p class="text-xs text-slate-400 mt-1">Isi formulir berikut, tim kami akan menyiapkan kalkulasi penawaran terbaik.</p>
+          <div
+            class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-8 sm:p-10 shadow-xl relative">
+
+            <div class="mb-8 border-b border-slate-100 dark:border-slate-800 pb-5">
+              <span
+                class="text-xs font-black text-brandOrange uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-md inline-block mb-2">B2B
+                Consultation</span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">Form Pengajuan Proyek</h2>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 font-normal">Isi formulir berikut, tim
+                representatif kami akan menyiapkan kalkulasi penawaran terbaik.</p>
             </div>
 
             <form id="rfqForm" onsubmit="handleClientInquiry(event)" class="space-y-5">
-              
+
               <!-- Nama Klien & Perusahaan -->
               <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nama Anda *</label>
-                  <input type="text" id="clientName" required placeholder="Contoh: Bpk. Hendra" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Nama
+                    Anda *</label>
+                  <input type="text" id="clientName" required placeholder="Contoh: Bpk. Hendra"
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nama Perusahaan / Brand *</label>
-                  <input type="text" id="companyName" required placeholder="Contoh: PT Sumber Maju Abadi" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Nama
+                    Perusahaan / Brand *</label>
+                  <input type="text" id="companyName" required placeholder="Contoh: PT Sumber Maju Abadi"
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                 </div>
               </div>
 
               <!-- WhatsApp & Layanan yang Dibutuhkan -->
               <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nomor WhatsApp *</label>
-                  <input type="tel" id="clientPhone" required placeholder="Contoh: 081234567890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Nomor
+                    WhatsApp *</label>
+                  <input type="tel" id="clientPhone" required placeholder="Contoh: 081234567890"
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Kebutuhan Layanan *</label>
-                  <select id="serviceNeeded" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Kebutuhan
+                    Layanan *</label>
+                  <select id="serviceNeeded" required
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                     <option value="" disabled selected>Pilih Layanan Utama...</option>
                     <option value="Manpower (SPG / SPB / Usher / TL)">Manpower (SPG / SPB / Usher / TL)</option>
                     <option value="Produksi Booth Pameran / Stage">Produksi Booth Pameran / Stage</option>
                     <option value="Event Activation / Roadshow">Event Activation / Roadshow</option>
-                    <option value="All-in Integrated Package (Manpower + Booth)">All-in Integrated Package (Manpower + Booth)</option>
+                    <option value="Corporate Workshop / MICE">Corporate Workshop / MICE</option>
+                    <option value="All-in Integrated Package (Manpower + Booth)">All-in Integrated Package (Manpower +
+                      Booth)</option>
                   </select>
                 </div>
               </div>
@@ -202,24 +292,35 @@
               <!-- Lokasi & Estimasi Jadwal Event -->
               <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Lokasi / Venue Event *</label>
-                  <input type="text" id="eventLocation" required placeholder="Contoh: JIEXPO / Mall Central Park" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Lokasi
+                    / Venue Event *</label>
+                  <input type="text" id="eventLocation" required placeholder="Contoh: JIEXPO / Mall Central Park"
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Estimasi Tanggal / Durasi *</label>
-                  <input type="text" id="eventTimeline" required placeholder="Contoh: 15-20 November (5 Hari)" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPink transition">
+                  <label
+                    class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Estimasi
+                    Tanggal / Durasi *</label>
+                  <input type="text" id="eventTimeline" required placeholder="Contoh: 15-20 November (5 Hari)"
+                    class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition">
                 </div>
               </div>
 
               <!-- Pesan Detail -->
               <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Rincian Kebutuhan & Target *</label>
-                <textarea id="projectDetails" rows="4" required placeholder="Jelaskan jumlah kebutuhan talent, ukuran booth, atau target KPI event Anda secara ringkas..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPink transition"></textarea>
+                <label
+                  class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">Rincian
+                  Kebutuhan & Target *</label>
+                <textarea id="projectDetails" rows="4" required
+                  placeholder="Jelaskan jumlah kebutuhan talent, ukuran booth, atau target KPI event Anda secara ringkas..."
+                  class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-brandPink transition"></textarea>
               </div>
 
               <!-- Submit Button -->
               <div class="pt-2">
-                <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brandPink via-purple-700 to-brandCyan text-white font-black text-sm uppercase tracking-wider hover:scale-[1.01] transition duration-300 shadow-xl shadow-brandPink/30 flex items-center justify-center gap-3">
+                <button type="submit"
+                  class="w-full py-4 rounded-2xl bg-gradient-to-r from-brandPink via-purple-700 to-brandCyan text-white font-black text-sm uppercase tracking-wider hover:scale-[1.01] transition duration-300 shadow-xl shadow-brandPink/30 flex items-center justify-center gap-3">
                   <i class="fab fa-whatsapp text-lg"></i> Kirim via WhatsApp Priority
                 </button>
               </div>
@@ -232,63 +333,166 @@
       </div>
 
       <!-- Google Maps Embed Section -->
-      <div class="mt-16 rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/60 p-2" data-aos="fade-up">
-        <div class="w-full h-80 rounded-2xl overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7509458798672!2d106.71593497499207!3d-6.426035793564983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e70006c25e6d%3A0x59a9c0cf2ee29850!2sD'Workshop%20by%20SenaPro!5e0!3m2!1sen!2sid!4v1787805167583!5m2!1sen!2sid" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
+      <div
+        class="mt-16 rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-2 shadow-lg"
+        data-aos="fade-up">
+        <div
+          class="w-full h-80 rounded-2xl overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7509458798672!2d106.71593497499207!3d-6.426035793564983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e70006c25e6d%3A0x59a9c0cf2ee29850!2sD'Workshop%20by%20SenaPro!5e0!3m2!1sen!2sid!4v1787805167583!5m2!1sen!2sid"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+          </iframe>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
+  <!-- ================= FOOTER ================= -->
+  <footer
+    class="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-16 pb-12 border-t border-slate-200 dark:border-slate-800/80 text-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+        <!-- Kolom 1: Brand & Social -->
+        <div class="space-y-4">
+          <a href="index.html" class="inline-block">
+            <img src="assets/images/logos.png" alt="SENA Logo" class="h-9 w-auto object-contain dark:hidden">
+            <img src="assets/images/logosputih.png" alt="SENA Logo" class="h-9 w-auto object-contain hidden dark:block">
+          </a>
+          <p class="text-sm font-bold text-slate-500 dark:text-slate-400 leading-relaxed">
+            Saatnya bikin eventmu, jadi omongan!
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://instagram.com/senapro.id"
+              class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandPink hover:border-brandPink transition">
+              <i class="fab fa-instagram text-xs"></i>
+            </a>
+            <a href="https://tiktok.com/senapro.id"
+              class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandCyan hover:border-brandCyan transition">
+              <i class="fab fa-tiktok text-xs"></i>
+            </a>
+          </div>
         </div>
-        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
-          Mitra terpercaya untuk solusi manpower, booth pameran presisi, dan eksekusi event activation.
-        </p>
+
+        <!-- Kolom 2: Navigasi (Highlight Active Join Talent) -->
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Navigasi</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
+            <li><a href="services.html" class="hover:text-brandOrange transition">Detail Layanan</a></li>
+            <li><a href="portfolio.html" class="hover:text-brandLime transition">Portofolio Proyek</a></li>
+            <li><a href="career.html" class="hover:text-brandPink transition">Karir & Rekrutmen</a></li>
+            <li><a href="contact.html" class="hover:text-brandPurple transition">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Layanan Spesialisasi -->
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Layanan Utama</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="services.html#manpower" class="hover:text-brandPink transition">Event Manpower & SPG</a></li>
+            <li><a href="services.html#booth" class="hover:text-brandOrange transition">Custom Booth & Stage</a></li>
+            <li><a href="services.html#activation" class="hover:text-brandLime transition">Brand Activation &
+                Sampling</a></li>
+            <li><a href="services.html#workshop" class="hover:text-brandCyan transition">Corporate Workshop & MICE</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 4: Fast Response Kontak -->
+        <div>
+          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
+          <div class="space-y-3 text-xs">
+            <a href="https://wa.me/628111199400" target="_blank"
+              class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandLime transition">
+              <i class="fab fa-whatsapp text-brandLime text-base"></i>
+              <span>+628 1111 99 400</span>
+            </a>
+            <a href="mailto:senapro.sba@gmail.com"
+              class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandPink transition">
+              <i class="fas fa-envelope text-brandPink text-sm"></i>
+              <span>senapro.sba@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
       </div>
-      <div>
-        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Halaman</h4>
-        <ul class="space-y-2 text-xs">
-          <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
-          <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
-          <li><a href="services.html" class="hover:text-brandOrange transition">Layanan</a></li>
-          <li><a href="portfolio.html" class="hover:text-brandLime transition">Portofolio</a></li>
-          <li><a href="join-talent.html" class="hover:text-brandPurpleSoft transition">Join Talent</a></li>
-        </ul>
+
+      <!-- Bottom Bar -->
+      <div
+        class="pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 SENA Event Agency. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-700 dark:hover:text-slate-300 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-700 dark:hover:text-slate-300 transition">Terms of Service</a>
+        </div>
       </div>
-      <div>
-        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
-        <p class="text-xs text-slate-400 mb-2"><i class="fab fa-whatsapp text-brandLime mr-2"></i> WhatsApp Konsultasi</p>
-        <p class="text-xs text-slate-400"><i class="fas fa-envelope text-brandPink mr-2"></i> info@agencypro.id</p>
-      </div>
+
     </div>
   </footer>
 
-  <script>
-    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+  <script>
+    // 1. Inisialisasi AOS
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic'
+    });
+
+    // 2. Mobile Menu Toggle
     function toggleMobileMenu() {
       document.getElementById('mobileMenu').classList.toggle('hidden');
     }
 
+    // 3. Dual Mode Theme Switcher
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icons = document.querySelectorAll('.theme-icon');
+
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        icons.forEach(icon => {
+          icon.classList.remove('fa-moon', 'text-amber-400');
+          icon.classList.add('fa-sun', 'text-amber-500');
+        });
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        icons.forEach(icon => {
+          icon.classList.remove('fa-sun', 'text-amber-500');
+          icon.classList.add('fa-moon', 'text-amber-400');
+        });
+      }
+    }
+
+    // Sinkronisasi ikon tema saat load
+    document.addEventListener('DOMContentLoaded', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      const icons = document.querySelectorAll('.theme-icon');
+      icons.forEach(icon => {
+        if (isDark) {
+          icon.classList.add('fa-moon', 'text-amber-400');
+          icon.classList.remove('fa-sun', 'text-amber-500');
+        } else {
+          icon.classList.add('fa-sun', 'text-amber-500');
+          icon.classList.remove('fa-moon', 'text-amber-400');
+        }
+      });
+    });
+
+    // 4. RFQ WhatsApp Dispatcher Handler
     function handleClientInquiry(e) {
       e.preventDefault();
 
-      // Ganti dengan nomor WhatsApp sales/operasional proyek (format 628xxxxxxxxxx)
+      // Nomor WhatsApp operasional/sales SENA (Format 628xxxxxxxxxx)
       const projectAdminWA = "6281234567890";
 
       const name = document.getElementById('clientName').value;
@@ -299,22 +503,23 @@
       const timeline = document.getElementById('eventTimeline').value;
       const details = document.getElementById('projectDetails').value;
 
-      const message = 
-        `*REQUEST FOR QUOTATION (RFQ) EVENT*\n` +
+      const message =
+        `*REQUEST FOR QUOTATION (RFQ) EVENT - SENA AGENCY*\n` +
         `------------------------------------\n` +
         `*Nama Klien:* ${name}\n` +
         `*Perusahaan/Brand:* ${company}\n` +
-        `*No. Kontak:* ${phone}\n` +
+        `*No. WhatsApp:* ${phone}\n` +
         `*Layanan:* ${service}\n` +
-        `*Lokasi Event:* ${venue}\n` +
+        `*Lokasi Venue:* ${venue}\n` +
         `*Timeline / Durasi:* ${timeline}\n` +
         `*Rincian Kebutuhan:* \n${details}\n` +
         `------------------------------------\n` +
-        `Halo Tim Agency, mohon bantuannya untuk informasi penawaran harga terkait rincian di atas. Terima kasih!`;
+        `Halo Tim SENA, mohon bantuannya untuk informasi penawaran harga terkait rincian proyek di atas. Terima kasih!`;
 
       const encodedUrl = `https://wa.me/${projectAdminWA}?text=${encodeURIComponent(message)}`;
       window.open(encodedUrl, '_blank');
     }
   </script>
 </body>
+
 </html>
