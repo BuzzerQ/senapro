@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan Kami - Event & Manpower Agency</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPink: '#EE00C6',
+            brandPinkSoft: '#FF99EE',
+            brandCyan: '#009FEE',
+            brandCyanSoft: '#99DDFF',
+            brandOrange: '#F99D2A',
+            brandOrangeSoft: '#FFDE59',
+            brandLime: '#9FEE00',
+            brandLimeSoft: '#DDFF99',
+            brandPurple: '#4F00EE',
+            brandPurpleSoft: '#BB99FF',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glow-cyan { box-shadow: 0 0 35px -5px rgba(0, 159, 238, 0.35); }
+    .glow-orange { box-shadow: 0 0 35px -5px rgba(249, 157, 42, 0.35); }
+    .glow-lime { box-shadow: 0 0 35px -5px rgba(159, 238, 0, 0.35); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+  <!-- Ambient Lights -->
+  <div class="fixed top-20 right-10 w-96 h-96 bg-brandOrange/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-20 left-10 w-96 h-96 bg-brandCyan/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-10 sm:h-12 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
+        <a href="index.html" class="text-slate-300 hover:text-brandPink transition">Home</a>
+        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
+        <a href="services.html" class="text-brandOrange relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandOrange">Layanan</a>
+        <a href="portfolio.html" class="text-slate-300 hover:text-brandLime transition">Portofolio</a>
+        <a href="join-talent.html" class="px-3.5 py-1.5 rounded-full bg-brandPurple/20 border border-brandPurple text-brandPurpleSoft hover:bg-brandPurple hover:text-white transition duration-300 flex items-center gap-2">
+          <i class="fas fa-sparkles text-xs"></i> Join Talent
+        </a>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="contact.html" class="bg-brandPink hover:brightness-95 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105">
+          <i class="fab fa-whatsapp text-lg mr-1.5"></i> Hubungi Kami
+        </a>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-brandPink p-2">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-medium text-slate-300 hover:text-brandPink">Home</a>
+      <a href="about.html" class="block font-medium text-slate-300 hover:text-brandCyan">Tentang Kami</a>
+      <a href="services.html" class="block font-bold text-brandOrange">Layanan</a>
+      <a href="portfolio.html" class="block font-medium text-slate-300 hover:text-brandLime">Portofolio</a>
+      <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
+      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Hubungi Kami</a>
+    </div>
+  </nav>
+
+  <!-- Header Banner -->
+  <section class="pt-36 pb-16 lg:pt-44 lg:pb-20 text-center relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span data-aos="fade-down" class="text-xs font-black text-brandOrange uppercase tracking-widest bg-orange-950/60 border border-brandOrange/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+        Solusi Terintegrasi
+      </span>
+      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-white tracking-tight">
+        Spesifikasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandOrange via-brandPink to-brandCyan">Layanan Kami</span>.
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-base sm:text-lg mt-6 leading-relaxed max-w-2xl mx-auto">
+        Dari penyediaan personil garda depan, fabrikasi booth pameran berstruktur presisi, hingga aktivasi brand skala nasional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service 1: Manpower (Cyan Focus) -->
+  <section id="manpower" class="py-16 border-t border-slate-800/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div data-aos="fade-right" class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-brandCyan/40 text-brandCyan text-xs font-black uppercase tracking-wider">
+            <i class="fas fa-users-rays"></i> Pilar 01
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+            Manpower Outsourcing & <span class="text-brandCyan">Direct Sales Force</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Penyediaan personil terkurasi dengan standar grooming tinggi, kemampuan komunikasi persuasif, dan integritas kerja lapangan. Kami memastikan setiap talent siap mengejar target penjualan dan menjaga citra brand Anda.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-2">
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandCyan text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">SPG & SPB Direct Sales</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandCyan text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Team Leader (TL) & Supervisor</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandCyan text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Usher VIP & Hospitality</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandCyan text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Crew Event & Logistik Lapangan</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-brandCyan hover:brightness-95 text-slate-950 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition">
+              Brief Kebutuhan Manpower <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="lg:col-span-6">
+          <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 glow-cyan">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i class="fas fa-clipboard-check text-brandCyan"></i> Fasilitas Pengelolaan Talent:
+            </h3>
+            <ul class="space-y-4 text-xs text-slate-400">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandCyan mt-0.5"></i>
+                <span><strong class="text-slate-200">Absensi & Live Reporting:</strong> Sistem absensi berbasis geotag/foto dan update progres harian.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandCyan mt-0.5"></i>
+                <span><strong class="text-slate-200">Replacement Guarantee:</strong> Penggantian talent cepat jika ada personil berhalangan hadir.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandCyan mt-0.5"></i>
+                <span><strong class="text-slate-200">Payroll & Legal Compliance:</strong> Penanganan payroll, kontrak kerja, dan administrasi B2B rapi.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: Booth Production (Orange Focus) -->
+  <section id="booth" class="py-16 border-t border-slate-800/80 bg-slate-900/30 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div data-aos="fade-right" class="lg:col-span-6 order-2 lg:order-1">
+          <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 glow-orange">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i class="fas fa-hammer text-brandOrange"></i> Kapabilitas Workshop & Fabrikasi:
+            </h3>
+            <ul class="space-y-4 text-xs text-slate-400">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandOrange mt-0.5"></i>
+                <span><strong class="text-slate-200">Material Berkualitas:</strong> Plywood/Multiplek, finishing HPL, duco, rangka besi holo, & neon flex.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandOrange mt-0.5"></i>
+                <span><strong class="text-slate-200">Teknis AV & Lighting:</strong> Sound system, TV display, moving beam, spotlight, dan instalasi kelistrikan aman.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandOrange mt-0.5"></i>
+                <span><strong class="text-slate-200">Bongkar Muat Tepat Waktu:</strong> Tim loading/unloading disiplin mengikuti jadwal ketat venue/mall.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="lg:col-span-6 space-y-6 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/60 border border-brandOrange/40 text-brandOrange text-xs font-black uppercase tracking-wider">
+            <i class="fas fa-cubes-stacked"></i> Pilar 02
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+            Produksi <span class="text-brandOrange">Booth Pameran & Panggung</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Mewujudkan identitas brand secara fisik melalui booth pameran interaktif, backdrop panggung, hingga pop-up display di pusat perbelanjaan dengan durabilitas tinggi.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-2">
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandOrange text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Custom Exhibition Booth (Expo)</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandOrange text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Mall Island & Display Showcase</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandOrange text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Stage & 3D Backdrop Structure</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandOrange text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Signage, Acrylic & Neon Flex Box</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-brandOrange hover:brightness-95 text-slate-950 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition">
+              Konsultasi Desain & Booth <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Event Activation (Lime Focus) -->
+  <section id="activation" class="py-16 border-t border-slate-800/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div data-aos="fade-right" class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-950/60 border border-brandLime/40 text-brandLime text-xs font-black uppercase tracking-wider">
+            <i class="fas fa-bolt-lightning"></i> Pilar 03
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+            Event & <span class="text-brandLime">Brand Activation</span>
+          </h2>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Mengubah interaksi pengunjung menjadi konversi nyata melalui program aktivasi lapangan yang dinamis, mulai dari sampling, roadshow multi-kota, gathering komunitas, hingga corporate fan events.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-3 pt-2">
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandLime text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">City Roadshow & Mall Activation</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandLime text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Sampling & Direct Engagement</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandLime text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Community Gathering & Screening</span>
+            </div>
+            <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl">
+              <i class="fas fa-check-circle text-brandLime text-lg"></i>
+              <span class="text-xs font-bold text-slate-200">Venue Sourcing & Perizinan Lokasi</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="contact.html" class="inline-flex items-center gap-2 bg-brandLime hover:brightness-95 text-slate-950 px-6 py-3 rounded-xl font-black text-xs uppercase tracking-wider transition">
+              Rancang Aktivasi Event <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="lg:col-span-6">
+          <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 glow-lime">
+            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <i class="fas fa-chart-line text-brandLime"></i> Metrik Keberhasilan Activation:
+            </h3>
+            <ul class="space-y-4 text-xs text-slate-400">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandLime mt-0.5"></i>
+                <span><strong class="text-slate-200">High Foot Traffic & Engagement:</strong> Pengaturan flow audiens yang menarik kerumunan secara teratur.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandLime mt-0.5"></i>
+                <span><strong class="text-slate-200">Interactive Gamification:</strong> Integrasi mini-games, kuis digital, dan voucher redemption.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-arrow-right text-brandLime mt-0.5"></i>
+                <span><strong class="text-slate-200">End-to-End Field Management:</strong> Dari soundman, MC, talent, keamanan booth, hingga perizinan.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
+          Mitra terintegrasi operasional event, booth fabrication, dan manpower agency terpercaya.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Halaman</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
+          <li><a href="portfolio.html" class="hover:text-brandLime transition">Portofolio</a></li>
+          <li><a href="join-talent.html" class="hover:text-brandPurpleSoft transition">Registrasi Talent</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
+        <p class="text-xs text-slate-400 mb-2"><i class="fab fa-whatsapp text-brandLime mr-2"></i> WhatsApp Konsultasi</p>
+        <p class="text-xs text-slate-400"><i class="fas fa-envelope text-brandPink mr-2"></i> info@agencypro.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
