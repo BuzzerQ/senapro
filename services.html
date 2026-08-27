@@ -17,6 +17,7 @@
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -42,14 +43,14 @@
 
   <script src="assets/js/main.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandOrange selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
 
   <!-- Ambient Lights -->
   <div class="fixed top-10 right-10 w-96 h-96 bg-brandOrange/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
   <div class="fixed bottom-10 left-10 w-96 h-96 bg-brandCyan/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80">
+  <nav class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
       
       <!-- Brand Logo -->
@@ -59,10 +60,10 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
-        <a href="index.html" class="text-slate-300 hover:text-brandPink transition">Home</a>
-        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
+        <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-brandPink transition">Home</a>
+        <a href="about.html" class="text-slate-700 dark:text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
         <a href="services.html" class="text-brandOrange relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandOrange">Layanan</a>
-        <a href="portfolio.html" class="text-slate-300 hover:text-brandLime transition">Portofolio</a>
+        <a href="portfolio.html" class="text-slate-700 dark:text-slate-300 hover:text-brandLime transition">Portofolio</a>
         <a href="join-talent.html" class="px-3.5 py-1.5 rounded-full bg-brandPurple/20 border border-brandPurple text-brandPurpleSoft hover:bg-brandPurple hover:text-white transition duration-300 flex items-center gap-2">
           <i class="fas fa-sparkles text-xs"></i> Join Talent
         </a>
@@ -80,11 +81,11 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
-      <a href="index.html" class="block font-medium text-slate-300 hover:text-brandPink">Home</a>
-      <a href="about.html" class="block font-medium text-slate-300 hover:text-brandCyan">Tentang Kami</a>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white dark:bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-medium text-slate-700 dark:text-slate-300 hover:text-brandPink">Home</a>
+      <a href="about.html" class="block font-medium text-slate-700 dark:text-slate-300 hover:text-brandCyan">Tentang Kami</a>
       <a href="services.html" class="block font-bold text-brandOrange">Layanan</a>
-      <a href="portfolio.html" class="block font-medium text-slate-300 hover:text-brandLime">Portofolio</a>
+      <a href="portfolio.html" class="block font-medium text-slate-700 dark:text-slate-300 hover:text-brandLime">Portofolio</a>
       <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
       <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Hubungi Kami</a>
     </div>
@@ -105,16 +106,16 @@
 
       <!-- Quick Anchor Pills -->
       <div data-aos="fade-up" data-aos-delay="300" class="flex flex-wrap justify-center gap-3 mt-8">
-        <a href="#manpower" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900/80 hover:border-brandPink hover:text-brandPink transition">
+        <a href="#manpower" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandPink hover:text-brandPink transition">
           <i class="fas fa-users-viewfinder mr-1.5"></i> Manpower & SPG
         </a>
-        <a href="#booth" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900/80 hover:border-brandOrange hover:text-brandOrange transition">
+        <a href="#booth" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-white dark:bg-slate-900/80 hover:border-brandOrange hover:text-brandOrange transition">
           <i class="fas fa-cubes-stacked mr-1.5"></i> Booth & Stage
         </a>
-        <a href="#activation" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900/80 hover:border-brandLime hover:text-brandLime transition">
+        <a href="#activation" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-white dark:bg-slate-900/80 hover:border-brandLime hover:text-brandLime transition">
           <i class="fas fa-bolt-lightning mr-1.5"></i> Brand Activation
         </a>
-        <a href="#workshop" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900/80 hover:border-brandCyan hover:text-brandCyan transition">
+        <a href="#workshop" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandCyan hover:text-brandCyan transition">
           <i class="fas fa-chalkboard-user mr-1.5"></i> Workshop & MICE
         </a>
       </div>
@@ -124,7 +125,7 @@
   <!-- Service 1: Manpower & Talent -->
   <section id="manpower" class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-brandPink transition duration-300">
+      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-800 hover:border-brandPink transition duration-300">
         
         <div class="lg:col-span-5">
           <div class="w-16 h-16 rounded-2xl bg-brandPink/20 text-brandPink flex items-center justify-center text-3xl mb-6">
@@ -168,7 +169,7 @@
   <!-- Service 2: Booth Production & Stage -->
   <section id="booth" class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-brandOrange transition duration-300">
+      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-800 hover:border-brandOrange transition duration-300">
         
         <div class="lg:col-span-5">
           <div class="w-16 h-16 rounded-2xl bg-brandOrange/20 text-brandOrange flex items-center justify-center text-3xl mb-6">
@@ -212,7 +213,7 @@
   <!-- Service 3: Brand Activation -->
   <section id="activation" class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-brandLime transition duration-300">
+      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-800 hover:border-brandLime transition duration-300">
         
         <div class="lg:col-span-5">
           <div class="w-16 h-16 rounded-2xl bg-brandLime/20 text-brandLime flex items-center justify-center text-3xl mb-6">
@@ -256,7 +257,7 @@
   <!-- Service 4: Workshop & Corporate MICE -->
   <section id="workshop" class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-brandCyan transition duration-300">
+      <div data-aos="fade-up" class="grid lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-3xl bg-white dark:bg-slate-900/90 border border-slate-800 hover:border-brandCyan transition duration-300">
         
         <div class="lg:col-span-5">
           <div class="w-16 h-16 rounded-2xl bg-brandCyan/20 text-brandCyan flex items-center justify-center text-3xl mb-6">

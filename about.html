@@ -43,6 +43,14 @@
   </style>
 
   <script src="assets/js/main.js"></script>
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+</script>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
 
@@ -234,6 +242,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/main.js"></script>
 
   <script>
     AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
