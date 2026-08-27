@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Proyek - Agency Profile</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPink: '#EE00C6',
+            brandPinkSoft: '#FF99EE',
+            brandCyan: '#009FEE',
+            brandCyanSoft: '#99DDFF',
+            brandOrange: '#F99D2A',
+            brandOrangeSoft: '#FFDE59',
+            brandLime: '#9FEE00',
+            brandLimeSoft: '#DDFF99',
+            brandPurple: '#4F00EE',
+            brandPurpleSoft: '#BB99FF',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glow-lime { box-shadow: 0 0 35px -5px rgba(159, 238, 0, 0.35); }
+    .filter-btn.active {
+      background-color: #9FEE00;
+      color: #020617;
+      border-color: #9FEE00;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
+
+  <!-- Ambient Lights -->
+  <div class="fixed top-10 right-1/4 w-96 h-96 bg-brandLime/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="fixed bottom-10 left-10 w-96 h-96 bg-brandPurple/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/sena.png" alt="Logo Perusahaan" class="h-8 sm:h-9 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
+        <a href="index.html" class="text-slate-300 hover:text-brandPink transition">Home</a>
+        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
+        <a href="services.html" class="text-slate-300 hover:text-brandOrange transition">Layanan</a>
+        <a href="portfolio.html" class="text-brandLime relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandLime">Portofolio</a>
+        <a href="join-talent.html" class="px-3.5 py-1.5 rounded-full bg-brandPurple/20 border border-brandPurple text-brandPurpleSoft hover:bg-brandPurple hover:text-white transition duration-300 flex items-center gap-2">
+          <i class="fas fa-sparkles text-xs"></i> Join Talent
+        </a>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="contact.html" class="bg-brandPink hover:brightness-95 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105">
+          <i class="fab fa-whatsapp text-lg mr-1.5"></i> Hubungi Kami
+        </a>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-brandPink p-2">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-medium text-slate-300 hover:text-brandPink">Home</a>
+      <a href="about.html" class="block font-medium text-slate-300 hover:text-brandCyan">Tentang Kami</a>
+      <a href="services.html" class="block font-medium text-slate-300 hover:text-brandOrange">Layanan</a>
+      <a href="portfolio.html" class="block font-bold text-brandLime">Portofolio</a>
+      <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
+      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Hubungi Kami</a>
+    </div>
+  </nav>
+
+  <!-- Header Banner -->
+  <section class="pt-36 pb-12 lg:pt-44 lg:pb-16 text-center relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span data-aos="fade-down" class="text-xs font-black text-brandLime uppercase tracking-widest bg-lime-950/60 border border-brandLime/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+        Bukti Kerja Nyata
+      </span>
+      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-white tracking-tight">
+        Galeri & Rekam Jejak <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandLime via-brandCyan to-brandPink">Proyek Kami</span>.
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-base sm:text-lg mt-5 leading-relaxed max-w-2xl mx-auto">
+        Dokumentasi eksekusi manpower, fabrikasi booth pameran, dan aktivasi brand yang telah dipercayakan oleh berbagai klien.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div data-aos="fade-up" data-aos-delay="300" class="flex flex-wrap justify-center gap-3 mt-10">
+        <button onclick="filterProjects('all')" class="filter-btn active px-5 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900 text-slate-300 hover:border-brandLime transition duration-300">
+          Semua Proyek
+        </button>
+        <button onclick="filterProjects('manpower')" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900 text-slate-300 hover:border-brandLime transition duration-300">
+          Manpower & SPG
+        </button>
+        <button onclick="filterProjects('booth')" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900 text-slate-300 hover:border-brandLime transition duration-300">
+          Booth & Exhibition
+        </button>
+        <button onclick="filterProjects('activation')" class="filter-btn px-5 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-slate-900 text-slate-300 hover:border-brandLime transition duration-300">
+          Brand Activation
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="pb-24 pt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1: Manpower -->
+        <div class="project-card manpower rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandCyan transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-users-rays text-5xl text-brandCyan/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi SPG</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandCyan/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Manpower
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandCyan transition">Direct Sales Deployment</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Penyediaan puluhan SPG & Team Leader terlatih untuk akuisisi pelanggan produk FMCG/Telco.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-calendar text-brandCyan mr-1"></i> Multi-City</span>
+              <span class="font-bold text-white">Full Team</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Booth -->
+        <div class="project-card booth rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandOrange transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-cubes-stacked text-5xl text-brandOrange/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi Booth</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandOrange/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Booth Production
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition">Custom Exhibition Expo</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Konstruksi booth pameran berskala besar dengan pencahayaan neon flex dan display interaktif.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-location-dot text-brandOrange mr-1"></i> Arena Expo / JIEXPO</span>
+              <span class="font-bold text-white">Fabrikasi Plywood</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Activation -->
+        <div class="project-card activation rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandLime transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-bolt-lightning text-5xl text-brandLime/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi Event</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Brand Activation
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandLime transition">Community Screening & Gathering</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Penyelenggaraan event nonton bareng dan interactive trivia games dengan crowd ratusan audiens.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-users text-brandLime mr-1"></i> 300+ Audiens</span>
+              <span class="font-bold text-white">Full Event EO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Manpower -->
+        <div class="project-card manpower rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandCyan transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-user-shield text-5xl text-brandCyan/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi Usher</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandCyan/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Manpower
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandCyan transition">Corporate Mentorship & Usher</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Penyediaan usher dan registrasi tamu VIP untuk program mentorship kepemimpinan korporasi.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-building text-brandCyan mr-1"></i> Head Office</span>
+              <span class="font-bold text-white">VIP Protocol</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Booth -->
+        <div class="project-card booth rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandOrange transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-store text-5xl text-brandOrange/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi Mall Island</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandOrange/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Booth Production
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandOrange transition">Mall Island Pop-Up Display</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Pembuatan island booth modular di koridor mall untuk campaign peluncuran produk baru.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-shopping-bag text-brandOrange mr-1"></i> Mall Atrium</span>
+              <span class="font-bold text-white">Finishing HPL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: Activation -->
+        <div class="project-card activation rounded-3xl bg-slate-900/90 border border-slate-800 overflow-hidden hover:border-brandLime transition-all duration-300 hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-60 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+            <div class="text-center p-4 text-slate-500 group-hover:scale-105 transition duration-500">
+              <i class="fas fa-bullhorn text-5xl text-brandLime/40 mb-2"></i>
+              <p class="text-xs font-semibold">Foto Dokumentasi Roadshow</p>
+            </div>
+            <div class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full">
+              Brand Activation
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white group-hover:text-brandLime transition">Multi-City Sampling Roadshow</h3>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Rangkaian roadshow promosi interaktif ke spot-spot publik dan pusat keramaian kota.</p>
+            <div class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fas fa-map text-brandLime mr-1"></i> JABODETABEK</span>
+              <span class="font-bold text-white">Direct Sampling</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/logosenaputih.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
+          Partner terpercaya untuk solusi manpower, booth pameran presisi, dan eksekusi event activation.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Halaman</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
+          <li><a href="services.html" class="hover:text-brandOrange transition">Layanan</a></li>
+          <li><a href="join-talent.html" class="hover:text-brandPurpleSoft transition">Registrasi Talent</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
+        <p class="text-xs text-slate-400 mb-2"><i class="fab fa-whatsapp text-brandLime mr-2"></i> WhatsApp Konsultasi</p>
+        <p class="text-xs text-slate-400"><i class="fas fa-envelope text-brandPink mr-2"></i> info@agencypro.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Filter Kategori & AOS -->
+  <script>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    function filterProjects(category) {
+      // Update active state pada tombol
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Filter kartu proyek
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
