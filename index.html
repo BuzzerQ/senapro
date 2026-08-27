@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agency Profile - Fun, Interactive & Professional</title>
+
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +25,7 @@
 
   <script>
     tailwind.config = {
+      darkmode: 'class',
       theme: {
         extend: {
           colors: {
@@ -62,6 +71,12 @@
     .glow-lime {
       box-shadow: 0 0 35px -5px rgba(159, 238, 0, 0.35);
     }
+
+    *, *::before, *::after {
+      transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
   </style>
 
   <script src="assets/js/main.js"></script>
@@ -103,6 +118,10 @@
           </span>
           <div class="absolute inset-0 bg-gradient-to-r from-brandPink via-brandPurple to-brandCyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </a>
+        <!-- Tombol Toggle Mode -->
+        <button onclick="toggleTheme()" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition">
+          <i class="fas fa-moon text-amber-400 text-sm theme-icon"></i>
+        </button>
       </div>
 
       <!-- Mobile Button -->
