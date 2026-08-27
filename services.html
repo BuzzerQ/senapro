@@ -60,6 +60,10 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
+        <!-- Tombol Toggle Mode Desktop -->
+        <button onclick="toggleTheme()" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition">
+          <i class="fas fa-moon text-amber-400 text-sm theme-icon"></i>
+        </button>
         <a href="index.html" class="text-slate-700 dark:text-slate-300 hover:text-brandPink transition">Home</a>
         <a href="about.html" class="text-slate-700 dark:text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
         <a href="services.html" class="text-brandOrange relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandOrange">Layanan</a>
@@ -97,7 +101,7 @@
       <span data-aos="fade-down" class="text-xs font-black text-brandOrange uppercase tracking-widest bg-orange-950/60 border border-brandOrange/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
         Solusi Terpadu B2B
       </span>
-      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-white tracking-tight">
+      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight">
         4 Pilar Layanan <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandOrange via-brandPink to-brandCyan">Eksekusi Event</span>.
       </h1>
       <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-base sm:text-lg mt-5 leading-relaxed max-w-2xl mx-auto">
@@ -109,10 +113,10 @@
         <a href="#manpower" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandPink hover:text-brandPink transition">
           <i class="fas fa-users-viewfinder mr-1.5"></i> Manpower & SPG
         </a>
-        <a href="#booth" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-white dark:bg-slate-900/80 hover:border-brandOrange hover:text-brandOrange transition">
-          <i class="fas fa-cubes-stacked mr-1.5"></i> Booth & Stage
+        <a href="#booth" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandOrange hover:text-brandOrange transition">
+          <i class="fas fa-users-viewfinder mr-1.5"></i> Booth & Stage
         </a>
-        <a href="#activation" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-white dark:bg-slate-900/80 hover:border-brandLime hover:text-brandLime transition">
+        <a href="#activation" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandLime hover:text-brandLime transition">
           <i class="fas fa-bolt-lightning mr-1.5"></i> Brand Activation
         </a>
         <a href="#workshop" class="px-4 py-2 rounded-xl text-xs font-bold border border-slate-700 bg-white dark:bg-slate-900/80 hover:border-brandCyan hover:text-brandCyan transition">
@@ -134,7 +138,7 @@
           <span class="text-xs font-black text-brandPink uppercase tracking-widest bg-pink-950/60 border border-brandPink/40 px-3 py-1 rounded-full inline-block mb-3">
             Pilar Layanan 01
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 mb-4">Manpower & Talent Management</h2>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1 mb-4">Manpower & Talent Management</h2>
           <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
             Penyediaan tenaga promosi dan representatif brand dengan kurasi penampilan, pembekalan product knowledge mendalam, dan pengawasan operasional harian.
           </p>
@@ -178,7 +182,7 @@
           <span class="text-xs font-black text-brandOrange uppercase tracking-widest bg-orange-950/60 border border-brandOrange/40 px-3 py-1 rounded-full inline-block mb-3">
             Pilar Layanan 02
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 mb-4">Booth Production & Stage</h2>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1 mb-4">Booth Production & Stage</h2>
           <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
             Pengerjaan konstruksi booth pameran berpresisi tinggi dari workshop mandiri. Menjamin kekuatan struktur, estetika finishing rapi, dan instalasi tepat waktu.
           </p>
@@ -222,7 +226,7 @@
           <span class="text-xs font-black text-brandLime uppercase tracking-widest bg-lime-950/60 border border-brandLime/40 px-3 py-1 rounded-full inline-block mb-3">
             Pilar Layanan 03
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 mb-4">Brand Activation & Roadshow</h2>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1 mb-4">Brand Activation & Roadshow</h2>
           <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
             Perancangan program interaktif yang mempertemukan brand dengan target pasar secara langsung melalui interaksi nyata, experiential games, dan sampling luas.
           </p>
@@ -266,7 +270,7 @@
           <span class="text-xs font-black text-brandCyan uppercase tracking-widest bg-cyan-950/60 border border-brandCyan/40 px-3 py-1 rounded-full inline-block mb-3">
             Pilar Layanan 04
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 mb-4">Workshop & Corporate MICE</h2>
+          <h2 class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white mt-1 mb-4">Workshop & Corporate MICE</h2>
           <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
             Solusi menyeluruh pengelolaan kegiatan edukatif, corporate training, leadership mentorship, dan seminar profesional dengan standar keprotokolan tinggi.
           </p>
@@ -318,7 +322,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
       <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
+          <img src="assets/images/logosenaputih.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
         </div>
         <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
           Partner terpercaya untuk solusi manpower, booth pameran presisi, dan eksekusi event activation.
