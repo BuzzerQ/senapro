@@ -1,0 +1,75 @@
+<!-- Form Container -->
+<form id="talentForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+  
+  <!-- Nama Lengkap & Tanggal Lahir (Date Picker) -->
+  <div class="grid sm:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nama Lengkap *</label>
+      <input type="text" id="fullName" required placeholder="Contoh: Jessica Olivia" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tanggal Lahir *</label>
+      <input type="date" id="birthDate" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition [color-scheme:dark]">
+    </div>
+  </div>
+
+  <!-- WhatsApp & Posisi -->
+  <div class="grid sm:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">No. WhatsApp Aktif *</label>
+      <input type="tel" id="whatsappNumber" required placeholder="Contoh: 081234567890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Posisi yang Diminati *</label>
+      <select id="talentRole" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+        <option value="" disabled selected>Pilih Posisi...</option>
+        <option value="SPG (Sales Promotion Girl)">SPG (Sales Promotion Girl)</option>
+        <option value="SPB (Sales Promotion Boy)">SPB (Sales Promotion Boy)</option>
+        <option value="Usher VIP / Hospitality">Usher VIP / Hospitality</option>
+        <option value="Team Leader (TL) / Supervisor">Team Leader (TL) / Supervisor</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Domisili, TB, BB -->
+  <div class="grid sm:grid-cols-3 gap-6">
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Kota Domisili *</label>
+      <input type="text" id="cityLocation" required placeholder="Contoh: Jakarta / Bogor" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tinggi Badan (cm) *</label>
+      <input type="number" id="bodyHeight" required placeholder="168" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Berat Badan (kg) *</label>
+      <input type="number" id="bodyWeight" required placeholder="52" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+  </div>
+
+  <!-- Upload File Foto Grid & Akun Sosmed -->
+  <div class="grid sm:grid-cols-2 gap-6">
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Foto Grid / Compcard / PDF * (Maks 5MB)</label>
+      <input type="file" id="talentPhoto" required accept=".jpg,.jpeg,.png,.pdf" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-300 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brandPurple file:text-white hover:file:brightness-110 focus:outline-none focus:border-brandPurple transition">
+    </div>
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Akun Sosmed (Instagram / TikTok) *</label>
+      <input type="text" id="socialMedia" required placeholder="Contoh: @username_kamu" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+    </div>
+  </div>
+
+  <!-- Pengalaman Kerja (Opsional / Textarea) -->
+  <div>
+    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Pengalaman Kerja / Event (Opsional)</label>
+    <textarea id="workExperience" rows="3" placeholder="Ceritakan pengalaman event/brand apa saja yang pernah kamu tangani..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPurple transition"></textarea>
+  </div>
+
+  <!-- Tombol Submit -->
+  <div class="pt-4">
+    <button type="submit" id="submitBtn" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brandPurple to-brandPink text-white font-black text-sm uppercase tracking-wider hover:scale-[1.02] transition duration-300 shadow-xl shadow-brandPurple/30 flex items-center justify-center gap-3">
+      <i class="fas fa-paper-plane"></i> Kirim Lamaran ke Database
+    </button>
+  </div>
+
+</form>
