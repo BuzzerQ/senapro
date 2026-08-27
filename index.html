@@ -17,7 +17,7 @@
 
   <script>
     tailwind.config = {
-      darkmode: 'class',
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -79,7 +79,6 @@
     }
   </style>
 
-  <script src="assets/js/main.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white">
 
@@ -89,7 +88,7 @@
   <div class="fixed top-1/2 right-1/4 w-80 h-80 bg-brandPurple/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
   <!-- Navbar Interaktif -->
-  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80 transition-all duration-300">
+  <nav class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800/80 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
       
       <!-- Brand Logo with Hover Spin Effect -->
@@ -152,7 +151,7 @@
       </div>
 
       <!-- Main Animated Headline -->
-      <h1 data-aos="zoom-in" data-aos-duration="1000" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none max-w-5xl mx-auto mb-8 text-white">
+      <h1 data-aos="zoom-in" data-aos-duration="1000" class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none max-w-5xl mx-auto mb-8 text-slate-900 dark:text-white">
         Bikin Event Lebih <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandPink via-brandOrange to-brandLime">Hidup</span>, Booth Lebih <span class="text-brandCyan underline decoration-wavy decoration-brandPink">Standout</span>.
       </h1>
 
@@ -350,6 +349,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/main.js"></script>
 
   <!-- Init AOS Script -->
   <script>
