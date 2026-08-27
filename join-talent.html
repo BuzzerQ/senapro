@@ -1,75 +1,297 @@
-<!-- Form Container -->
-<form id="talentForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Talent Pool - Agency Profile</title>
   
-  <!-- Nama Lengkap & Tanggal Lahir (Date Picker) -->
-  <div class="grid sm:grid-cols-2 gap-6">
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nama Lengkap *</label>
-      <input type="text" id="fullName" required placeholder="Contoh: Jessica Olivia" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-    </div>
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tanggal Lahir *</label>
-      <input type="date" id="birthDate" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition [color-scheme:dark]">
-    </div>
-  </div>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- WhatsApp & Posisi -->
-  <div class="grid sm:grid-cols-2 gap-6">
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">No. WhatsApp Aktif *</label>
-      <input type="tel" id="whatsappNumber" required placeholder="Contoh: 081234567890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-    </div>
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Posisi yang Diminati *</label>
-      <select id="talentRole" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-        <option value="" disabled selected>Pilih Posisi...</option>
-        <option value="SPG (Sales Promotion Girl)">SPG (Sales Promotion Girl)</option>
-        <option value="SPB (Sales Promotion Boy)">SPB (Sales Promotion Boy)</option>
-        <option value="Usher VIP / Hospitality">Usher VIP / Hospitality</option>
-        <option value="Team Leader (TL) / Supervisor">Team Leader (TL) / Supervisor</option>
-      </select>
-    </div>
-  </div>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Domisili, TB, BB -->
-  <div class="grid sm:grid-cols-3 gap-6">
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Kota Domisili *</label>
-      <input type="text" id="cityLocation" required placeholder="Contoh: Jakarta / Bogor" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-    </div>
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tinggi Badan (cm) *</label>
-      <input type="number" id="bodyHeight" required placeholder="168" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-    </div>
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Berat Badan (kg) *</label>
-      <input type="number" id="bodyWeight" required placeholder="52" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
-    </div>
-  </div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPink: '#EE00C6',
+            brandPinkSoft: '#FF99EE',
+            brandCyan: '#009FEE',
+            brandCyanSoft: '#99DDFF',
+            brandOrange: '#F99D2A',
+            brandOrangeSoft: '#FFDE59',
+            brandLime: '#9FEE00',
+            brandLimeSoft: '#DDFF99',
+            brandPurple: '#4F00EE',
+            brandPurpleSoft: '#BB99FF',
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Upload File Foto Grid & Akun Sosmed -->
-  <div class="grid sm:grid-cols-2 gap-6">
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Foto Grid / Compcard / PDF * (Maks 5MB)</label>
-      <input type="file" id="talentPhoto" required accept=".jpg,.jpeg,.png,.pdf" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-300 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brandPurple file:text-white hover:file:brightness-110 focus:outline-none focus:border-brandPurple transition">
+  <style>
+    .glow-purple { box-shadow: 0 0 35px -5px rgba(79, 0, 238, 0.4); }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPurple selection:text-white">
+
+  <!-- Ambient Background Glows -->
+  <div class="fixed top-10 left-1/3 w-96 h-96 bg-brandPurple/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse"></div>
+  <div class="fixed bottom-10 right-10 w-96 h-96 bg-brandPink/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 sm:h-9 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-bold">
+        <a href="index.html" class="text-slate-300 hover:text-brandPink transition">Home</a>
+        <a href="about.html" class="text-slate-300 hover:text-brandCyan transition">Tentang Kami</a>
+        <a href="services.html" class="text-slate-300 hover:text-brandOrange transition">Layanan</a>
+        <a href="portfolio.html" class="text-slate-300 hover:text-brandLime transition">Portofolio</a>
+        <a href="join-talent.html" class="px-4 py-1.5 rounded-full bg-brandPurple text-white shadow-lg shadow-brandPurple/40 flex items-center gap-2">
+          <i class="fas fa-sparkles text-xs"></i> Join Talent
+        </a>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="contact.html" class="bg-brandPink hover:brightness-95 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105">
+          <i class="fab fa-whatsapp text-lg mr-1.5"></i> Hubungi Kami
+        </a>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-brandPurpleSoft p-2">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
     </div>
-    <div>
-      <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Akun Sosmed (Instagram / TikTok) *</label>
-      <input type="text" id="socialMedia" required placeholder="Contoh: @username_kamu" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-medium text-slate-300 hover:text-brandPink">Home</a>
+      <a href="about.html" class="block font-medium text-slate-300 hover:text-brandCyan">Tentang Kami</a>
+      <a href="services.html" class="block font-medium text-slate-300 hover:text-brandOrange">Layanan</a>
+      <a href="portfolio.html" class="block font-medium text-slate-300 hover:text-brandLime">Portofolio</a>
+      <a href="join-talent.html" class="block font-bold text-brandPurpleSoft">Join Talent</a>
+      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Hubungi Kami</a>
     </div>
-  </div>
+  </nav>
 
-  <!-- Pengalaman Kerja (Opsional / Textarea) -->
-  <div>
-    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Pengalaman Kerja / Event (Opsional)</label>
-    <textarea id="workExperience" rows="3" placeholder="Ceritakan pengalaman event/brand apa saja yang pernah kamu tangani..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPurple transition"></textarea>
-  </div>
+  <!-- Header Banner -->
+  <section class="pt-36 pb-12 lg:pt-44 lg:pb-16 text-center relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span data-aos="fade-down" class="text-xs font-black text-brandPurpleSoft uppercase tracking-widest bg-purple-950/60 border border-brandPurple/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
+        Career & Database Talent
+      </span>
+      <h1 data-aos="zoom-in" class="text-4xl sm:text-6xl font-black text-white tracking-tight">
+        Gabung Menjadi Bagian dari <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandPurple via-brandPink to-brandCyan">Talent Squad Kami</span>.
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-slate-400 text-base sm:text-lg mt-5 leading-relaxed max-w-2xl mx-auto">
+        Dapatkan kesempatan bekerja di berbagai proyek pameran bergengsi, direct sales reguler, hingga event activation skala besar bersama brand ternama.
+      </p>
+    </div>
+  </section>
 
-  <!-- Tombol Submit -->
-  <div class="pt-4">
-    <button type="submit" id="submitBtn" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brandPurple to-brandPink text-white font-black text-sm uppercase tracking-wider hover:scale-[1.02] transition duration-300 shadow-xl shadow-brandPurple/30 flex items-center justify-center gap-3">
-      <i class="fas fa-paper-plane"></i> Kirim Lamaran ke Database
-    </button>
-  </div>
+  <!-- Benefit Cards -->
+  <section class="pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div data-aos="fade-up" data-aos-delay="100" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brandPurple transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-brandPurple/20 text-brandPurpleSoft flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-wallet"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Fee Transparan & Tepat Waktu</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Sistem penggajian jelas, transparan, dan dibayarkan tepat waktu sesuai kesepakatan kontrak.</p>
+        </div>
 
-</form>
+        <div data-aos="fade-up" data-aos-delay="200" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brandPink transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-brandPink/20 text-brandPinkSoft flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Proyek Rutin & Beragam</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Tawaran pekerjaan berkala dari expo JIEXPO, event mall, launching produk, hingga booth roadshow.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="300" class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brandCyan transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-brandCyan/20 text-brandCyanSoft flex items-center justify-center text-xl mb-4">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-1">Briefing & Support Lapangan</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Didampingi Team Leader profesional dan pembekalan materi jelas sebelum turun ke lapangan.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Registration Form -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-aos="zoom-in" class="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 glow-purple relative overflow-hidden">
+        
+        <div class="mb-8 border-b border-slate-800 pb-6">
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Formulir Pendaftaran Talent</h2>
+          <p class="text-xs text-slate-400 mt-1">Lengkapi data diri kamu dengan benar. Tim rekrutmen kami akan segera menghubungi via WhatsApp.</p>
+        </div>
+
+        <!-- Form Container -->
+        <form id="talentForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+          
+          <!-- Nama Lengkap & Tanggal Lahir (Date Picker) -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nama Lengkap *</label>
+              <input type="text" id="fullName" required placeholder="Contoh: Jessica Olivia" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tanggal Lahir *</label>
+              <input type="date" id="birthDate" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition [color-scheme:dark]">
+            </div>
+          </div>
+
+          <!-- WhatsApp & Posisi -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">No. WhatsApp Aktif *</label>
+              <input type="tel" id="whatsappNumber" required placeholder="Contoh: 081234567890" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Posisi yang Diminati *</label>
+              <select id="talentRole" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+                <option value="" disabled selected>Pilih Posisi...</option>
+                <option value="SPG (Sales Promotion Girl)">SPG (Sales Promotion Girl)</option>
+                <option value="SPB (Sales Promotion Boy)">SPB (Sales Promotion Boy)</option>
+                <option value="Usher VIP / Hospitality">Usher VIP / Hospitality</option>
+                <option value="Team Leader (TL) / Supervisor">Team Leader (TL) / Supervisor</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Domisili, TB, BB -->
+          <div class="grid sm:grid-cols-3 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Kota Domisili *</label>
+              <input type="text" id="cityLocation" required placeholder="Contoh: Jakarta / Bogor" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Tinggi Badan (cm) *</label>
+              <input type="number" id="bodyHeight" required placeholder="168" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Berat Badan (kg) *</label>
+              <input type="number" id="bodyWeight" required placeholder="52" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+          </div>
+
+          <!-- Upload File Foto Grid & Akun Sosmed -->
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Foto Grid / Compcard / PDF * (Maks 5MB)</label>
+              <input type="file" id="talentPhoto" required accept=".jpg,.jpeg,.png,.pdf" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-300 file:mr-4 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brandPurple file:text-white hover:file:brightness-110 focus:outline-none focus:border-brandPurple transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Akun Sosmed (Instagram / TikTok) *</label>
+              <input type="text" id="socialMedia" required placeholder="Contoh: @username_kamu" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-brandPurple transition">
+            </div>
+          </div>
+
+          <!-- Pengalaman Kerja (Opsional / Textarea) -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Pengalaman Kerja / Event (Opsional)</label>
+            <textarea id="workExperience" rows="3" placeholder="Ceritakan pengalaman event/brand apa saja yang pernah kamu tangani..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brandPurple transition"></textarea>
+          </div>
+
+          <!-- Tombol Submit -->
+          <div class="pt-4">
+            <button type="submit" id="submitBtn" class="w-full py-4 rounded-2xl bg-gradient-to-r from-brandPurple to-brandPink text-white font-black text-sm uppercase tracking-wider hover:scale-[1.02] transition duration-300 shadow-xl shadow-brandPurple/30 flex items-center justify-center gap-3">
+              <i class="fas fa-paper-plane"></i> Kirim Lamaran ke Database
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800/80 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="assets/images/logo.png" alt="Logo Perusahaan" class="h-8 w-auto object-contain">
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
+          Mitra terpercaya untuk solusi manpower, booth pameran presisi, dan eksekusi event activation.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Halaman</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
+          <li><a href="services.html" class="hover:text-brandOrange transition">Layanan</a></li>
+          <li><a href="portfolio.html" class="hover:text-brandLime transition">Portofolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Recruitment Support</h4>
+        <p class="text-xs text-slate-400 mb-2"><i class="fab fa-whatsapp text-brandPurpleSoft mr-2"></i> WA Admin Talent</p>
+        <p class="text-xs text-slate-400"><i class="fas fa-envelope text-brandPink mr-2"></i> talent@agencypro.id</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      // Ganti dengan nomor WhatsApp admin HR/Talent (format: 628xxxxxxxxxx)
+      const adminWhatsApp = "6281234567890";
+
+      const name = document.getElementById('fullName').value;
+      const phone = document.getElementById('whatsappNumber').value;
+      const role = document.getElementById('talentRole').value;
+      const city = document.getElementById('cityLocation').value;
+      const height = document.getElementById('bodyHeight').value;
+      const weight = document.getElementById('bodyWeight').value;
+      const portfolio = document.getElementById('portfolioLink').value;
+      const experience = document.getElementById('workExperience').value || '-';
+
+      const message = 
+        `*PENDAFTARAN TALENT BARU*\n` +
+        `------------------------------------\n` +
+        `*Nama:* ${name}\n` +
+        `*No. WA:* ${phone}\n` +
+        `*Posisi:* ${role}\n` +
+        `*Domisili:* ${city}\n` +
+        `*TB / BB:* ${height} cm / ${weight} kg\n` +
+        `*IG / Compcard:* ${portfolio}\n` +
+        `*Pengalaman:* ${experience}\n` +
+        `------------------------------------\n` +
+        `Halo Admin, saya ingin mendaftar ke database talent. Mohon infonya untuk project yang sedang open. Terima kasih!`;
+
+      const encodedUrl = `https://wa.me/${adminWhatsApp}?text=${encodeURIComponent(message)}`;
+      window.open(encodedUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
