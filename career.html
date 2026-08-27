@@ -38,12 +38,6 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Google Fonts: Poppins (Identik dengan Halaman Lain) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
   <!-- AOS (Animate On Scroll) CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -53,9 +47,6 @@
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Poppins', 'sans-serif'],
-          },
           colors: {
             brandPink: '#FF007A',
             brandCyan: '#00D2FF',
@@ -107,9 +98,11 @@
         <a href="career.html"
           class="text-brandPurple relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandPurple">Karir</a>
         <a href="join-talent.html"
-          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 dark:bg-brandPurple/20 border border-brandPurple text-brandPurple dark:text-brandPurpleSoft font-bold hover:bg-brandPurple hover:text-white transition duration-300">
-          <i class="fas fa-sparkles text-xs"></i>
-          <span>Join Talent</span>
+          class="group relative overflow-hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brandPurple text-brandPurple dark:text-brandPurpleSoft font-bold hover:text-white hover:border-transparent transition-all duration-300">
+          <span
+            class="absolute inset-0 bg-gradient-to-r from-brandPurple to-brandPink opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"></span>
+          <i class="fas fa-star text-xs relative z-10 group-hover:scale-110 transition-transform"></i>
+          <span class="relative z-10">Join Talent</span>
         </a>
       </div>
 
