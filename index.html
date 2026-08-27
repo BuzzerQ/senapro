@@ -50,6 +50,9 @@
     }
   </script>
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <script>
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.classList.remove('dark');
@@ -270,6 +273,54 @@
 
       </div>
 
+      <!-- ================= CLIENTS LOGO SLIDER ================= -->
+      <section class="py-12 border-b border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-8">
+            Dipercaya Oleh Brand Nasional & Korporasi Terkemuka
+          </p>
+
+          <!-- Swiper Container -->
+          <div class="swiper clientSwiper max-w-5xl mx-auto">
+            <div class="swiper-wrapper items-center">
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-1.png" alt="Client 1"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-2.png" alt="Client 2"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-3.png" alt="Client 3"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-4.png" alt="Client 4"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-5.png" alt="Client 5"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+              <div class="swiper-slide flex justify-center items-center">
+                <img src="assets/images/clients/logo-6.png" alt="Client 6"
+                  class="h-8 sm:h-9 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
   </section>
 
@@ -332,7 +383,7 @@
             <h3 class="text-xl font-bold text-white mt-1 mb-3 group-hover:text-brandOrange transition">Booth & Stage
             </h3>
             <p class="text-slate-400 text-xs leading-relaxed">
-              Fabrikasi custom booth pameran, instalasi display modular, dan backdrop panggung presisi tinggi.
+              Produksi custom booth pameran, instalasi display modular, dan backdrop panggung presisi tinggi.
             </p>
           </div>
           <a href="services.html#booth"
@@ -521,6 +572,36 @@
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
     }
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.clientSwiper', {
+      slidesPerView: 2,
+      spaceBetween: 24,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 32,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 48,
+        },
+      },
+    });
   </script>
 </body>
 
