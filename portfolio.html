@@ -318,11 +318,18 @@
         <!-- Interactive Badge (Kontras & Tegas di Mode Terang, Tetap Glow di Dark Mode) -->
         <div
           data-aos="fade-down"
-          class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-lime-100/90 dark:bg-slate-900 border border-lime-500/60 dark:border-brandLime/40 text-slate-900 dark:text-brandLime text-xs font-black tracking-wider uppercase mb-6 shadow-sm"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-100/90 dark:bg-slate-900 border border-lime-500/60 dark:border-brandLime/40 text-slate-900 dark:text-brandLime text-xs font-black tracking-wider uppercase mb-6 shadow-sm"
         >
-          <span
-            class="w-2 h-2 rounded-full bg-lime-600 dark:bg-brandLime animate-ping"
-          ></span>
+          <!-- Titik Lebih Besar & Jarak Pas dengan Teks -->
+          <span class="relative flex h-3 w-3 shrink-0">
+            <span
+              class="animate-ping absolute inset-0 rounded-full bg-lime-600 dark:bg-brandLime opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-lime-700 dark:bg-brandLime"
+            ></span>
+          </span>
+
           Bukti Kerja Nyata
         </div>
 
@@ -533,8 +540,11 @@
               <div
                 class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500"
               >
-                <i class="fas fa-lightbulb text-5xl text-brandLime/40 mb-2"></i>
-                <p class="text-xs font-semibold">Foto Dokumentasi Event</p>
+                <img
+                  src="images/uto1.JPG"
+                  alt="Exhibition Booth"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
               </div>
               <div
                 class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
@@ -551,23 +561,23 @@
               <h3
                 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandLime transition"
               >
-                Community Screening & Gathering
+                U-Coin TakeOver
               </h3>
               <p
                 class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
               >
-                Penyelenggaraan event nonton bareng interaktif dengan kuis
-                trivia digital dan engagement ratusan komunitas.
+                Penyelenggaraan event U-Coin TakeOver berupa community screening
+                dan gathering untuk audiens loyal brand by.U.
               </p>
               <div
                 class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
               >
                 <span
-                  ><i class="fas fa-users text-brandLime mr-1.5"></i> 300+
-                  Audiens</span
+                  ><i class="fas fa-users text-brandLime mr-1.5"></i> Bandung,
+                  Makassar (5 kota)</span
                 >
                 <span class="font-bold text-brandLime flex items-center gap-1"
-                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                  >Detail <i class="fas fa-chevron-right text-[10px]"></i
                 ></span>
               </div>
             </div>
@@ -688,10 +698,11 @@
               <div
                 class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500"
               >
-                <i class="fas fa-handshake text-5xl text-brandPink/40 mb-2"></i>
-                <p class="text-xs font-semibold">
-                  Dokumentasi Outsource Solution
-                </p>
+                <img
+                  src="images/buddies1.jpeg"
+                  alt="SPG TL Usher PRJ"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
               </div>
               <div
                 class="absolute top-4 left-4 bg-brandPink text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
@@ -708,7 +719,7 @@
               <h3
                 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandPink transition"
               >
-                National Branch Outsource Staff
+                Account Executive & Direct Sales by.U
               </h3>
               <p
                 class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
@@ -720,11 +731,11 @@
                 class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
               >
                 <span
-                  ><i class="fas fa-briefcase text-brandPink mr-1.5"></i>
-                  Kontrak Tahunan</span
+                  ><i class="fas fa-briefcase text-brandPink mr-1.5"></i> 300+
+                  Karyawan</span
                 >
                 <span class="font-bold text-brandPink flex items-center gap-1"
-                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                  >Detail <i class="fas fa-chevron-right text-[10px]"></i
                 ></span>
               </div>
             </div>
@@ -1121,8 +1132,12 @@
           scope: "30 SPG Sales + 3 Team Leader",
           client: "by.U (Telkomsel)",
           desc: "Eksekusi penyebaran tenaga promosi dan direct selling untuk kampanye brand retail anak muda. Mencakup kurasi grooming, briefing product knowledge intensif, monitoring absensi harian, hingga rekapitulasi penjualan harian terukur.",
-          mainImg: "images/fotospg.jpeg",
-          gallery: ["images/fotospg.jpeg", "images/fotospg.jpeg"],
+          mainImg: "images/fotospg1.JPG",
+          gallery: [
+            "images/fotospg1.JPG",
+            "images/fotospg2.JPG",
+            "images/fotospg.jpeg",
+          ],
         },
         project2: {
           title: "Custom Booth Exhibition by.U",
@@ -1133,18 +1148,18 @@
           client: "by.U (Telkomsel)",
           desc: "Pembangunan custom booth exhibition modular 2 lantai berstruktur kokoh dengan finishing rapi, tata pencahayaan neon flex presisi, dan zona interaktif untuk audiens.",
           mainImg: "images/fotobooth.jpeg",
-          gallery: ["images/fotobooth.jpeg", "images/fotobooth.jpeg"],
+          gallery: ["images/fotobooth.jpeg"],
         },
         project3: {
-          title: "Community Screening & Gathering",
+          title: "U-Coin TakeOver",
           badge: "Brand Activation",
           badgeColor: "bg-lime-100 text-brandLime dark:bg-lime-950/60",
-          location: "Jakarta",
-          scope: "Konsep Acara + Interactive Kahoot Trivia + Stage Flow",
+          location: "Bandung, Makassar (5 kota)",
+          scope: "Konsep Acara + Booth Production + Activity",
           client: "MAXstream & Community Partner",
           desc: "Penyelenggaraan acara nonton bareng eksklusif yang memadukan hiburan visual panggung dengan interaksi digital trivia berhadiah untuk mendongkrak partisipasi ratusan peserta.",
-          mainImg: "assets/images/og-preview.jpg",
-          gallery: ["assets/images/og-preview.jpg"],
+          mainImg: "images/fotospg1.JPG",
+          gallery: ["images/fotospg2.JPG", "images/uto2.jpg"],
         },
         project4: {
           title: "Danantara Mentorship Program",
@@ -1155,7 +1170,7 @@
           client: "PT Telkomsel & Danantara Indonesia",
           desc: "Pengelolaan alur registrasi digital presisi menggunakan custom web application barcode scanner, pendampingan keprotokolan pimpinan senior, penyusunan materi guidebook, dan koordinasi multimedia.",
           mainImg: "images/mntroship.JPG",
-          gallery: ["images/mntroship.JPG", "images/mntroship.JPG"],
+          gallery: ["images/mntroship.JPG"],
         },
         project5: {
           title: "SPG, TL, & Usher PRJ 2026",
@@ -1167,18 +1182,18 @@
           client: "IndiHome / Corporate Partner",
           desc: "Penyediaan dan supervisi penuh tim usher VIP, SPG sales, dan Team Leader selama 32 hari penuh pelaksanaan Pekan Raya Jakarta dengan zero-complaint operasional.",
           mainImg: "images/indihomjfk.jpeg",
-          gallery: ["images/indihomjfk.jpeg", "images/indihomjfk.jpeg"],
+          gallery: ["images/indihomjfk.jpeg"],
         },
         project6: {
-          title: "National Branch Outsource Staff",
+          title: "Account Executive & Direct Sales by.U",
           badge: "Outsourcing Solution",
           badgeColor: "bg-pink-100 text-brandPink dark:bg-pink-950/60",
-          location: "Jabodetabek & Regional Office",
+          location: "30 Kota di Indonesia",
           scope: "Long-term Contracting + Payroll System + KPI Controlling",
-          client: "Corporate B2B Partner",
+          client: "Telkomsel",
           desc: "Pengelolaan menyeluruh penempatan tenaga kerja terampil untuk kebutuhan operasional jangka panjang (bulanan hingga tahunan) dengan kepatuhan legalitas ketenagakerjaan dan jaminan backup talent.",
-          mainImg: "assets/images/og-preview.jpg",
-          gallery: ["assets/images/og-preview.jpg"],
+          mainImg: "images/buddies1.jpeg",
+          gallery: ["images/buddies1.jpeg"],
         },
       };
 
