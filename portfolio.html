@@ -1,759 +1,1234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <meta
+      name="title"
+      content="Portofolio Proyek - SENAPRO Solusi Eksekusi Event & Outsource"
+    />
+    <meta
+      name="description"
+      content="Galeri dan rekam jejak portofolio SENAPRO: Outsourcing Solutions, Booth & Stage, Brand Activation, Event Crew & Talent, serta Corporate Workshop & MICE."
+    />
+    <meta
+      name="keywords"
+      content="Event Organizer Jakarta, Outsourcing Indonesia, Agency SPG Jakarta, Booth Production, Brand Activation Indonesia, Event Crew Jabodetabek, MICE Management"
+    />
+    <meta name="author" content="SENAPRO" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="SENAPRO - Solusi Manpower, Booth & Brand Activation">
-  <meta name="description"
-    content="Partner eksekusi event terintegrasi di Jakarta & Seluruh Indonesia. Penyedia Manpower & SPG, Booth Production, Brand Activation, dan Handling Workshop terpercaya.">
-  <meta name="keywords"
-    content="Event Organizer Jakarta, Agency SPG Jakarta, Booth Production, Brand Activation Indonesia, Manpower Jabodetabek, Outsourcing Indonesia">
-  <meta name="author" content="SENAPRO">
-  <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://senapro.id/portfolio.html" />
+    <meta property="og:title" content="Portofolio Proyek - SENAPRO" />
+    <meta
+      property="og:description"
+      content="Dokumentasi eksekusi proyek outsourcing, konstruksi booth pameran, aktivasi brand, kru event terkurasi, dan manajemen MICE."
+    />
+    <meta
+      property="og:image"
+      content="https://senapro.id/assets/images/og-preview.jpg"
+    />
 
-  <!-- Open Graph / Facebook / WhatsApp Preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://senapro.id/">
-  <meta property="og:title" content="SENAPRO - Bikin Event Lebih Hidup, Booth Lebih Standout">
-  <meta property="og:description"
-    content="Layanan terintegrasi SPG/Manpower, custom exhibition booth, hingga brand activation nasional. Konsultasikan kebutuhan event kamu sekarang.">
-  <meta property="og:image" content="https://senapro.id/assets/images/og-preview.jpg">
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://senapro.id/portfolio.html" />
+    <meta name="twitter:title" content="Portofolio Proyek - SENAPRO" />
+    <meta
+      name="twitter:description"
+      content="Rekam jejak eksekusi event dan manajemen tenaga kerja profesional di Jabodetabek & nasional."
+    />
+    <meta
+      name="twitter:image"
+      content="https://senapro.id/assets/images/og-preview.jpg"
+    />
 
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://senapro.id/">
-  <meta name="twitter:title" content="SENAPRO - Event & Manpower Partner">
-  <meta name="twitter:description"
-    content="Partner eksekusi event profesional di Jabodetabek. Manpower terkurasi & booth production berkualitas.">
-  <meta name="twitter:image" content="https://senapro.id/assets/images/og-preview.jpg">
+    <title>Portofolio - SENAPRO</title>
 
-  <title>Portofolio - SENAPRO</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <!-- AOS Animation -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/images/iconsena.png" />
 
-  <link rel="icon" type="image/png" href="assets/images/iconsena.png" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brandPink: "#FF007A",
+              brandPinkSoft: "#FF99EE",
+              brandCyan: "#00D2FF",
+              brandCyanSoft: "#99DDFF",
+              brandOrange: "#FF7A00",
+              brandOrangeSoft: "#FFDE59",
+              brandLime: "#A6FF00",
+              brandLimeSoft: "#DDFF99",
+              brandPurple: "#7B2CBF",
+              brandPurpleSoft: "#C77DFF",
+            },
+          },
+        },
+      };
+    </script>
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandPink: '#FF007A',
-            brandPinkSoft: '#FF99EE',
-            brandCyan: '#00D2FF',
-            brandCyanSoft: '#99DDFF',
-            brandOrange: '#FF7A00',
-            brandOrangeSoft: '#FFDE59',
-            brandLime: '#A6FF00',
-            brandLimeSoft: '#DDFF99',
-            brandPurple: '#7B2CBF',
-            brandPurpleSoft: '#C77DFF',
-          }
-        }
+    <style>
+      /* Styling tombol filter saat tidak aktif */
+      .filter-btn {
+        background-color: rgb(255 255 255 / 0.9);
+        color: #475569;
+        border-color: #e2e8f0;
       }
-    }
-  </script>
-
-  <style>
-    .glow-lime {
-      box-shadow: 0 0 35px -5px rgba(166, 255, 0, 0.35);
-    }
-
-    .filter-btn.active {
-      background-color: #A6FF00;
-      color: #020617;
-      border-color: #A6FF00;
-      font-weight: 800;
-    }
-  </style>
-
-  <!-- Theme Script (Default Dark, persistent via localStorage) -->
-  <script>
-    if (localStorage.getItem('theme') === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-      if (!localStorage.getItem('theme')) {
-        localStorage.setItem('theme', 'dark');
+      .dark .filter-btn {
+        background-color: rgb(15 23 42 / 0.8);
+        color: #94a3b8;
+        border-color: #1e293b;
       }
-    }
-  </script>
-</head>
 
-<body
-  class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white transition-colors duration-300">
+      /* Active Highlight masing-masing kategori */
+      .filter-btn[data-category="all"].active {
+        background: linear-gradient(
+          to right,
+          #a6ff00,
+          #00d2ff,
+          #ff007a
+        ) !important;
+        color: #fff !important;
+        border: none !important;
+        outline: none !important;
+        font-weight: 800;
+        box-shadow:
+          0 0 25px -3px rgba(166, 255, 0, 0.45),
+          0 0 20px -3px rgba(255, 0, 122, 0.35) !important;
+      }
+      .filter-btn[data-category="outsource"].active {
+        background-color: #ff007a !important;
+        color: #ffffff !important;
+        border-color: #ff007a !important;
+        box-shadow: 0 0 20px -3px rgba(255, 0, 122, 0.5);
+      }
+      .filter-btn[data-category="booth"].active {
+        background-color: #ff7a00 !important;
+        color: #ffffff !important;
+        border-color: #ff7a00 !important;
+        box-shadow: 0 0 20px -3px rgba(255, 122, 0, 0.5);
+      }
+      .filter-btn[data-category="activation"].active {
+        background-color: #a6ff00 !important;
+        color: #020617 !important;
+        border-color: #a6ff00 !important;
+        box-shadow: 0 0 20px -3px rgba(166, 255, 0, 0.45);
+      }
+      .filter-btn[data-category="crew"].active {
+        background-color: #7b2cbf !important;
+        color: #ffffff !important;
+        border-color: #7b2cbf !important;
+        box-shadow: 0 0 20px -3px rgba(123, 44, 191, 0.5);
+      }
+      .filter-btn[data-category="workshop"].active {
+        background-color: #00d2ff !important;
+        color: #020617 !important;
+        border-color: #00d2ff !important;
+        box-shadow: 0 0 20px -3px rgba(0, 210, 255, 0.45);
+      }
+    </style>
 
-  <!-- Ambient Lights -->
-  <div
-    class="fixed top-10 right-1/4 w-96 h-96 bg-brandLime/10 dark:bg-brandLime/15 rounded-full blur-3xl pointer-events-none -z-10">
-  </div>
-  <div
-    class="fixed bottom-10 left-10 w-96 h-96 bg-brandPurple/10 dark:bg-brandPurple/20 rounded-full blur-3xl pointer-events-none -z-10">
-  </div>
-
-  <!-- ================= NAVBAR ================= -->
-  <nav
-    class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800/80 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-
-      <!-- Brand Logo Auto Switch -->
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/images/logosena.png" alt="SENA Logo"
-          class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 dark:hidden">
-        <img src="assets/images/logosenaputih.png" alt="SENA Logo"
-          class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 hidden dark:block">
-      </a>
-
-      <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center space-x-7 text-sm font-bold">
-        <a href="index.html" class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition">Home</a>
-        <a href="about.html" class="text-slate-800 dark:text-slate-200 hover:text-brandCyan transition">Tentang Kami</a>
-        <a href="services.html" class="text-slate-800 dark:text-slate-200 hover:text-brandOrange transition">Layanan</a>
-        <a href="portfolio.html"
-          class="text-brandLime relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandLime">Portofolio</a>
-        <a href="career.html" class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition">Karir</a>
-        <a href="join-talent.html"
-          class="group relative overflow-hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brandPurple text-brandPurple dark:text-brandPurpleSoft font-bold hover:text-white hover:border-transparent transition-all duration-300">
-          <span
-            class="absolute inset-0 bg-gradient-to-r from-brandPurple to-brandPink opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"></span>
-          <i class="fas fa-star text-xs relative z-10 group-hover:scale-110 transition-transform"></i>
-          <span class="relative z-10">Join Talent</span>
-        </a>
-      </div>
-
-      <!-- Action Buttons + Toggle Theme Desktop -->
-      <div class="hidden sm:flex items-center gap-3">
-        <a href="contact.html"
-          class="relative group overflow-hidden bg-brandPink text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105">
-          <span class="relative z-10 flex items-center gap-2">
-            <i class="fab fa-whatsapp text-base"></i> Hubungi Kami!
-          </span>
-        </a>
-
-        <!-- Toggle Theme Button -->
-        <button onclick="toggleTheme()" aria-label="Toggle Theme"
-          class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition">
-          <i class="fas fa-moon text-amber-400 text-sm theme-icon"></i>
-        </button>
-      </div>
-
-      <!-- Hamburger Button Mobile -->
-      <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-800 dark:text-white hover:text-brandLime p-2">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu"
-      class="hidden lg:hidden bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-4 shadow-xl">
-      <a href="index.html" class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink">Home</a>
-      <a href="about.html" class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandCyan">Tentang
-        Kami</a>
-      <a href="services.html"
-        class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandOrange">Layanan</a>
-      <a href="portfolio.html" class="block font-bold text-brandLime">Portofolio</a>
-      <a href="career.html"
-        class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink">Karir</a>
-      <a href="join-talent.html" class="block font-bold text-brandPurple dark:text-brandPurpleSoft">Join Talent</a>
-
-      <!-- Tombol Toggle Mobile -->
-      <button onclick="toggleTheme()"
-        class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs">
-        <span>Mode Tampilan</span>
-        <i class="fas fa-moon text-amber-400 text-base theme-icon"></i>
-      </button>
-
-      <a href="contact.html" class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold">Let's Talk!</a>
-    </div>
-  </nav>
-
-  <!-- ================= HEADER BANNER ================= -->
-  <section class="pt-36 pb-12 lg:pt-44 lg:pb-16 text-center relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span data-aos="fade-down"
-        class="text-xs font-black text-brandPurple uppercase tracking-widest bg-purple-100 dark:bg-lime-950/60 border border-brandLime/40 px-3.5 py-1.5 rounded-full inline-block mb-4">
-        Bukti Kerja Nyata
-      </span>
-      <h1 data-aos="zoom-in"
-        class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-        Galeri & Rekam Jejak <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-brandLime via-brandCyan to-brandPink">Proyek
-          Kami</span>.
-      </h1>
-      <p data-aos="fade-up" data-aos-delay="200"
-        class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-5 leading-relaxed max-w-2xl mx-auto font-normal">
-        Dokumentasi eksekusi manpower, fabrikasi booth pameran, dan aktivasi brand yang telah dipercayakan oleh berbagai
-        klien korporat dan brand nasional.
-      </p>
-
-      <!-- Category Filter Tabs -->
-      <div data-aos="fade-up" data-aos-delay="300" class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mt-10">
-        <button onclick="filterProjects('all')"
-          class="filter-btn active px-5 py-2.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none hover:border-brandLime transition duration-300">
-          Semua Proyek
-        </button>
-        <button onclick="filterProjects('manpower')"
-          class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none hover:border-brandLime transition duration-300">
-          Manpower & SPG
-        </button>
-        <button onclick="filterProjects('booth')"
-          class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none hover:border-brandLime transition duration-300">
-          Booth & Exhibition
-        </button>
-        <button onclick="filterProjects('activation')"
-          class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 shadow-sm dark:shadow-none hover:border-brandLime transition duration-300">
-          Brand Activation
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PORTFOLIO GRID (9 CARDS DENGAN LIGHTBOX) ================= -->
-  <section class="pb-24 pt-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Card 1: Manpower (Direct Sales FMCG) -->
-        <div onclick="openProjectModal('project1')"
-          class="project-card cursor-pointer manpower rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandCyan dark:hover:border-brandCyan transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up">
-          <div class="h-60 relative overflow-hidden bg-slate-900">
-            <!-- Gambar Thumbnail Kartu -->
-            <img src="images/fotospg.jpeg" alt="Direct Sales Deployment"
-              class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-
-            <!-- Badge Kategori (Kiri Atas) -->
-            <div
-              class="absolute top-4 left-4 bg-brandCyan/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Manpower
-            </div>
-
-            <!-- Icon Pop-up (Kanan Atas) -->
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandCyan transition">
-              SPG Activation by.U</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">Menyediakan
-              SPG untuk activity event by.U</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-calendar text-brandCyan mr-1.5"></i> BLok M - Jakarta</span>
-              <span class="font-bold text-brandCyan flex items-center gap-1">Detail Event
-                <i class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: Booth (Custom Exhibition Expo) -->
-        <div onclick="openProjectModal('project2')"
-          class="project-card cursor-pointer booth rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandOrange dark:hover:border-brandOrange transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-            <div
-              class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500">
-              <i class="fas fa-cubes-stacked text-5xl text-brandOrange/40 mb-2"></i>
-              <p class="text-xs font-semibold">Foto Dokumentasi Booth</p>
-            </div>
-            <div
-              class="absolute top-4 left-4 bg-brandOrange/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Booth Production
-            </div>
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandOrange transition">
-              Custom Exhibition Expo</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">Konstruksi
-              booth pameran berskala besar dengan pencahayaan neon flex dan display interaktif.</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-location-dot text-brandOrange mr-1.5"></i> Arena Expo / JIEXPO</span>
-              <span class="font-bold text-brandOrange flex items-center gap-1">Detail Proyek <i
-                  class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Activation (Community Screening) -->
-        <div onclick="openProjectModal('project3')"
-          class="project-card cursor-pointer activation rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandLime dark:hover:border-brandLime transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-            <div
-              class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500">
-              <i class="fas fa-bolt-lightning text-5xl text-brandLime/40 mb-2"></i>
-              <p class="text-xs font-semibold">Foto Dokumentasi Event</p>
-            </div>
-            <div
-              class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Brand Activation
-            </div>
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandLime transition">
-              Community Screening & Gathering</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">
-              Penyelenggaraan event nonton bareng dan interactive trivia games dengan crowd ratusan audiens.</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-users text-brandLime mr-1.5"></i> 300+ Audiens</span>
-              <span class="font-bold text-brandLime flex items-center gap-1">Detail Proyek <i
-                  class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Manpower (Corporate Usher VIP) -->
-        <div onclick="openProjectModal('project4')"
-          class="project-card cursor-pointer manpower rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandCyan dark:hover:border-brandCyan transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up">
-          <div class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-            <div
-              class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500">
-              <i class="fas fa-user-shield text-5xl text-brandCyan/40 mb-2"></i>
-              <p class="text-xs font-semibold">Foto Dokumentasi Usher</p>
-            </div>
-            <div
-              class="absolute top-4 left-4 bg-brandCyan/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Manpower
-            </div>
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandCyan transition">
-              Corporate Mentorship & Usher</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">Penyediaan
-              usher dan registrasi tamu VIP untuk program mentorship kepemimpinan korporasi.</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-building text-brandCyan mr-1.5"></i> Head Office</span>
-              <span class="font-bold text-brandCyan flex items-center gap-1">Detail Proyek <i
-                  class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: Booth (Mall Island Display) -->
-        <div onclick="openProjectModal('project5')"
-          class="project-card cursor-pointer booth rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandOrange dark:hover:border-brandOrange transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up" data-aos-delay="100">
-          <div class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-            <div
-              class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500">
-              <i class="fas fa-store text-5xl text-brandOrange/40 mb-2"></i>
-              <p class="text-xs font-semibold">Foto Dokumentasi Mall Island</p>
-            </div>
-            <div
-              class="absolute top-4 left-4 bg-brandOrange/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Booth Production
-            </div>
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandOrange transition">
-              Mall Island Pop-Up Display</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">Pembuatan
-              island booth modular di koridor mall untuk campaign peluncuran produk baru.</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-shopping-bag text-brandOrange mr-1.5"></i> Mall Atrium</span>
-              <span class="font-bold text-brandOrange flex items-center gap-1">Detail Proyek <i
-                  class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: Activation (Multi-City Sampling) -->
-        <div onclick="openProjectModal('project6')"
-          class="project-card cursor-pointer activation rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandLime dark:hover:border-brandLime transition-all duration-300 hover:-translate-y-2 group"
-          data-aos="fade-up" data-aos-delay="200">
-          <div class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center">
-            <div
-              class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500">
-              <i class="fas fa-bullhorn text-5xl text-brandLime/40 mb-2"></i>
-              <p class="text-xs font-semibold">Foto Dokumentasi Roadshow</p>
-            </div>
-            <div
-              class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-              Brand Activation
-            </div>
-            <div
-              class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition">
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3
-              class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandLime transition">
-              Multi-City Sampling Roadshow</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal">Rangkaian
-              roadshow promosi interaktif ke spot-spot publik dan pusat keramaian kota.</p>
-            <div
-              class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
-              <span><i class="fas fa-map text-brandLime mr-1.5"></i> JABODETABEK</span>
-              <span class="font-bold text-brandLime flex items-center gap-1">Detail Proyek <i
-                  class="fas fa-chevron-right text-[10px]"></i></span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer
-    class="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-16 pb-12 border-t border-slate-200 dark:border-slate-800/80 text-sm transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-        <!-- Kolom 1: Brand & Social -->
-        <div class="space-y-4">
-          <a href="index.html" class="inline-block">
-            <img src="assets/images/logos.png" alt="SENA Logo" class="h-9 w-auto object-contain dark:hidden">
-            <img src="assets/images/logosputih.png" alt="SENA Logo" class="h-9 w-auto object-contain hidden dark:block">
-          </a>
-          <p class="text-sm font-bold text-slate-500 dark:text-slate-400 leading-relaxed">
-            Saatnya bikin eventmu, jadi omongan!
-          </p>
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://instagram.com/senapro.id"
-              class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandPink hover:border-brandPink transition">
-              <i class="fab fa-instagram text-xs"></i>
-            </a>
-            <a href="https://tiktok.com/senapro.id"
-              class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandCyan hover:border-brandCyan transition">
-              <i class="fab fa-tiktok text-xs"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Kolom 2: Navigasi (Highlight Active Home) -->
-        <div>
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Navigasi</h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="index.html" class="hover:text-brandPink transition">Home</a></li>
-            <li><a href="about.html" class="hover:text-brandCyan transition">Tentang Kami</a></li>
-            <li><a href="services.html" class="hover:text-brandOrange transition">Detail Layanan</a></li>
-            <li><a href="portfolio.html" class="text-brandLime font-bold transition">Portofolio Proyek</a></li>
-            <li><a href="career.html" class="hover:text-brandPink transition">Karir & Rekrutmen</a></li>
-            <li><a href="contact.html" class="hover:text-brandPurpleSoft transition">Hubungi Kami</a></li>
-          </ul>
-        </div>
-
-        <!-- Kolom 3: Layanan Spesialisasi -->
-        <div>
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Layanan Utama</h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="services.html#manpower" class="hover:text-brandPink transition">Event Manpower & SPG</a></li>
-            <li><a href="services.html#booth" class="hover:text-brandOrange transition">Custom Booth & Stage</a></li>
-            <li><a href="services.html#activation" class="hover:text-brandLime transition">Brand Activation &
-                Sampling</a></li>
-            <li><a href="services.html#workshop" class="hover:text-brandCyan transition">Corporate Workshop & MICE</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Kolom 4: Fast Response Kontak -->
-        <div>
-          <h4 class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4">Fast Response</h4>
-          <div class="space-y-3 text-xs">
-            <a href="https://wa.me/628111199400" target="_blank"
-              class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandLime transition">
-              <i class="fab fa-whatsapp text-brandLime text-base"></i>
-              <span>+628 1111 99 400</span>
-            </a>
-            <a href="mailto:senapro.sba@gmail.com"
-              class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandPink transition">
-              <i class="fas fa-envelope text-brandPink text-sm"></i>
-              <span>senapro.sba@gmail.com</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar -->
-      <div
-        class="pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 SENA Barokah Abadi. All rights reserved.</p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- ================= SCRIPT FILTER & THEME & AOS ================= -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-  <script>
-    // 1. Inisialisasi Animasi AOS
-    AOS.init({
-      once: true,
-      duration: 800,
-      easing: 'ease-out-cubic',
-    });
-
-    // 2. Toggle Mobile Menu
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
-
-    // 3. Toggle Theme & Preference
-    function toggleTheme() {
-      const html = document.documentElement;
-      const icons = document.querySelectorAll('.theme-icon');
-
-      if (html.classList.contains('dark')) {
-        html.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-        icons.forEach(icon => {
-          icon.classList.remove('fa-moon', 'text-amber-400');
-          icon.classList.add('fa-sun', 'text-amber-500');
-        });
+    <!-- Theme Script (Default Dark, persistent via localStorage) -->
+    <script>
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.remove("dark");
       } else {
-        html.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-        icons.forEach(icon => {
-          icon.classList.remove('fa-sun', 'text-amber-500');
-          icon.classList.add('fa-moon', 'text-amber-400');
-        });
-      }
-    }
-
-    // Sinkronisasi ikon saat load pertama
-    document.addEventListener('DOMContentLoaded', () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      const icons = document.querySelectorAll('.theme-icon');
-      icons.forEach(icon => {
-        if (isDark) {
-          icon.classList.add('fa-moon', 'text-amber-400');
-          icon.classList.remove('fa-sun', 'text-amber-500');
-        } else {
-          icon.classList.add('fa-sun', 'text-amber-500');
-          icon.classList.remove('fa-moon', 'text-amber-400');
+        document.documentElement.classList.add("dark");
+        if (!localStorage.getItem("theme")) {
+          localStorage.setItem("theme", "dark");
         }
-      });
-    });
-
-    // 4. Filter Kategori Proyek Portofolio
-    function filterProjects(category) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      // Ambil tombol yang diklik secara aman
-      if (window.event && window.event.currentTarget) {
-        window.event.currentTarget.classList.add('active');
       }
+    </script>
+  </head>
 
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
-
-  <!-- ================= MODAL DETAIL PROYEK ================= -->
-  <div id="projectModal"
-    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto bg-slate-950/80 backdrop-blur-md transition-all duration-300">
-
-    <!-- Backdrop Click Area -->
-    <div class="fixed inset-0" onclick="closeProjectModal()"></div>
-
-    <!-- Modal Content Box -->
+  <body
+    class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans overflow-x-hidden selection:bg-brandPink selection:text-white transition-colors duration-300"
+  >
+    <!-- Ambient Lights -->
     <div
-      class="relative w-full max-w-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 my-8 overflow-hidden max-h-[90vh] flex flex-col">
+      class="fixed top-10 right-1/4 w-96 h-96 bg-brandLime/10 dark:bg-brandLime/15 rounded-full blur-3xl pointer-events-none -z-10"
+    ></div>
+    <div
+      class="fixed bottom-10 left-10 w-96 h-96 bg-brandPurple/10 dark:bg-brandPurple/20 rounded-full blur-3xl pointer-events-none -z-10"
+    ></div>
 
-      <!-- Tombol Close (X) -->
-      <button onclick="closeProjectModal()"
-        class="absolute top-5 right-5 w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brandPink hover:text-white dark:hover:bg-brandPink text-slate-500 dark:text-slate-400 flex items-center justify-center transition">
-        <i class="fas fa-xmark text-lg"></i>
-      </button>
+    <!-- ================= NAVBAR ================= -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800/80 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20"
+      >
+        <!-- Brand Logo Auto Switch -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img
+            src="assets/images/logosena.png"
+            alt="SENA Logo"
+            class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 dark:hidden"
+          />
+          <img
+            src="assets/images/logosenaputih.png"
+            alt="SENA Logo"
+            class="h-8 sm:h-10 w-auto object-contain hover:scale-105 transition-transform duration-300 hidden dark:block"
+          />
+        </a>
 
-      <!-- Header Modal -->
-      <div class="mb-4 pr-12">
-        <span id="modalBadge"
-          class="inline-block px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg mb-2">
-          Kategori
-        </span>
-        <h3 id="modalTitle" class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-          Nama Proyek
-        </h3>
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center space-x-7 text-sm font-bold">
+          <a
+            href="index.html"
+            class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-slate-800 dark:text-slate-200 hover:text-brandCyan transition"
+            >Tentang Kami</a
+          >
+          <a
+            href="services.html"
+            class="text-slate-800 dark:text-slate-200 hover:text-brandOrange transition"
+            >Layanan</a
+          >
+          <a
+            href="portfolio.html"
+            class="text-brandLime relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandLime"
+            >Portofolio</a
+          >
+          <a
+            href="career.html"
+            class="text-slate-800 dark:text-slate-200 hover:text-brandPink transition"
+            >Karir</a
+          >
+          <a
+            href="join-talent.html"
+            class="group relative overflow-hidden inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brandPurple text-brandPurple dark:text-brandPurpleSoft font-bold hover:text-white hover:border-transparent transition-all duration-300"
+          >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-brandPurple to-brandPink opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"
+            ></span>
+            <i
+              class="fas fa-star text-xs relative z-10 group-hover:scale-110 transition-transform"
+            ></i>
+            <span class="relative z-10">Join Talent</span>
+          </a>
+        </div>
+
+        <!-- Action Buttons + Toggle Theme Desktop -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a
+            href="contact.html"
+            class="relative group overflow-hidden bg-brandPink text-white px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg shadow-brandPink/30 transition duration-300 hover:scale-105"
+          >
+            <span class="relative z-10 flex items-center gap-2">
+              <i class="fab fa-whatsapp text-base"></i> Hubungi Kami!
+            </span>
+          </a>
+
+          <!-- Toggle Theme Button -->
+          <button
+            onclick="toggleTheme()"
+            aria-label="Toggle Theme"
+            class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition"
+          >
+            <i class="fas fa-moon text-amber-400 text-sm theme-icon"></i>
+          </button>
+        </div>
+
+        <!-- Hamburger Button Mobile -->
+        <button
+          onclick="toggleMobileMenu()"
+          class="lg:hidden text-slate-800 dark:text-white hover:text-brandLime p-2"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
       </div>
 
-      <!-- Scrollable Content -->
-      <div class="overflow-y-auto space-y-6 pr-2">
+      <!-- Mobile Dropdown -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-4 shadow-xl"
+      >
+        <a
+          href="index.html"
+          class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandCyan"
+          >Tentang Kami</a
+        >
+        <a
+          href="services.html"
+          class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandOrange"
+          >Layanan</a
+        >
+        <a href="portfolio.html" class="block font-bold text-brandLime"
+          >Portofolio</a
+        >
+        <a
+          href="career.html"
+          class="block font-semibold text-slate-700 dark:text-slate-300 hover:text-brandPink"
+          >Karir</a
+        >
+        <a
+          href="join-talent.html"
+          class="block font-bold text-brandPurple dark:text-brandPurpleSoft"
+          >Join Talent</a
+        >
 
-        <!-- Foto Utama Besar -->
+        <!-- Tombol Toggle Mobile -->
+        <button
+          onclick="toggleTheme()"
+          class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs"
+        >
+          <span>Mode Tampilan</span>
+          <i class="fas fa-moon text-amber-400 text-base theme-icon"></i>
+        </button>
+
+        <a
+          href="contact.html"
+          class="block text-center bg-brandPink text-white py-3 rounded-xl font-bold"
+          >Let's Talk!</a
+        >
+      </div>
+    </nav>
+
+    <!-- ================= HEADER BANNER ================= -->
+    <section class="pt-36 pb-12 lg:pt-44 lg:pb-16 text-center relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Interactive Badge Bersinar di Dark Mode -->
         <div
-          class="w-full h-64 sm:h-80 rounded-2xl bg-slate-100 dark:bg-slate-800 overflow-hidden flex items-center justify-center border border-slate-200 dark:border-slate-800">
-          <img id="modalMainImg" src="" alt="Main Preview" class="w-full h-full object-cover">
+          data-aos="fade-down"
+          class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-lime-100/80 dark:bg-slate-900 border border-brandLime/40 text-slate-900 dark:text-brandLime text-xs font-black tracking-wider uppercase mb-6 shadow-sm"
+        >
+          <span class="w-2 h-2 rounded-full bg-brandLime animate-ping"></span>
+          Bukti Kerja Nyata
         </div>
 
-        <!-- Mini Galeri Foto Tambahan -->
-        <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Galeri Dokumentasi</h4>
-          <div id="modalGalleryGrid" class="grid grid-cols-3 gap-3">
-            <!-- Gambar thumbnail akan di-generate via JavaScript -->
-          </div>
-        </div>
+        <!-- Judul Headline -->
+        <h1
+          data-aos="zoom-in"
+          class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight"
+        >
+          Galeri & Rekam Jejak
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-brandLime via-brandCyan to-brandPink"
+            >Proyek Kami</span
+          >.
+        </h1>
 
-        <!-- Deskripsi & Scope of Work -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 text-xs">
-          <div>
-            <span class="text-slate-400 block mb-0.5">Lokasi Event:</span>
-            <strong id="modalLocation" class="text-slate-800 dark:text-slate-200">Jakarta</strong>
-          </div>
-          <div>
-            <span class="text-slate-400 block mb-0.5">Scope of Work:</span>
-            <strong id="modalScope" class="text-slate-800 dark:text-slate-200">Manpower & TL</strong>
-          </div>
-          <div>
-            <span class="text-slate-400 block mb-0.5">Klien / Brand:</span>
-            <strong id="modalClient" class="text-slate-800 dark:text-slate-200">Corporate FMCG</strong>
-          </div>
-        </div>
-
-        <p id="modalDesc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Deskripsi detail event...
+        <p
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-5 leading-relaxed max-w-2xl mx-auto font-normal"
+        >
+          Dokumentasi eksekusi proyek outsourcing jangka panjang, konstruksi
+          booth pameran, aktivasi brand, kru event terlatih, dan pengelolaan
+          workshop MICE nasional.
         </p>
 
-      </div>
+        <!-- Category Filter Tabs Dinamis Warna -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="flex flex-wrap justify-center gap-2.5 sm:gap-3 mt-10"
+        >
+          <!-- All: Neon Lime Active Default -->
+          <button
+            onclick="filterProjects('all', this)"
+            data-category="all"
+            class="filter-btn active px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Semua Proyek
+          </button>
 
-      <!-- Footer Modal CTA -->
-      <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end">
-        <a href="contact.html"
-          class="px-5 py-2.5 rounded-xl bg-brandPink text-white font-bold text-xs shadow-lg shadow-brandPink/30 hover:scale-105 transition flex items-center gap-2">
-          <i class="fab fa-whatsapp"></i> Rancang Event Seperti Ini
-        </a>
-      </div>
+          <!-- Outsource: Brand Pink -->
+          <button
+            onclick="filterProjects('outsource', this)"
+            data-category="outsource"
+            class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Outsourcing
+          </button>
 
+          <!-- Booth: Brand Orange -->
+          <button
+            onclick="filterProjects('booth', this)"
+            data-category="booth"
+            class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Booth & Stage
+          </button>
+
+          <!-- Activation: Brand Lime -->
+          <button
+            onclick="filterProjects('activation', this)"
+            data-category="activation"
+            class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Brand Activation
+          </button>
+
+          <!-- Crew: Brand Purple -->
+          <button
+            onclick="filterProjects('crew', this)"
+            data-category="crew"
+            class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Event Crew & Talent
+          </button>
+
+          <!-- Workshop: Brand Cyan -->
+          <button
+            onclick="filterProjects('workshop', this)"
+            data-category="workshop"
+            class="filter-btn px-4 py-2.5 rounded-xl text-xs font-bold border transition-all duration-300"
+          >
+            Workshop & MICE
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO GRID ================= -->
+    <section class="pb-24 pt-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="portfolioGrid"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Card 1: Event Crew (SPG Activation by.U) -->
+          <div
+            onclick="openProjectModal('project1')"
+            class="project-card cursor-pointer crew rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandPurple dark:hover:border-brandPurpleSoft transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+          >
+            <div class="h-60 relative overflow-hidden bg-slate-900">
+              <img
+                src="images/fotospg.jpeg"
+                alt="SPG Activation"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brandPurple text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Event Crew
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandPurple dark:group-hover:text-brandPurpleSoft transition"
+              >
+                SPG Activation by.U
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Penyediaan dan pengelolaan SPG frontliner aktif untuk activity
+                kampanye brand retail.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i
+                    class="fas fa-location-dot text-brandPurple dark:text-brandPurpleSoft mr-1.5"
+                  ></i>
+                  Blok M - Jakarta</span
+                >
+                <span
+                  class="font-bold text-brandPurple dark:text-brandPurpleSoft flex items-center gap-1"
+                  >Detail Event <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Booth (Custom Exhibition Expo by.U) -->
+          <div
+            onclick="openProjectModal('project2')"
+            class="project-card cursor-pointer booth rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandOrange dark:hover:border-brandOrange transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-60 relative overflow-hidden bg-slate-900">
+              <img
+                src="images/fotobooth.jpeg"
+                alt="Exhibition Booth"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brandOrange/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Booth & Stage
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandOrange transition"
+              >
+                Custom Booth Exhibition by.U
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Konstruksi booth pameran 2 lantai dengan pencahayaan neon flex
+                presisi dan instalasi display interaktif.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i class="fas fa-location-dot text-brandOrange mr-1.5"></i>
+                  Jakarta</span
+                >
+                <span class="font-bold text-brandOrange flex items-center gap-1"
+                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Activation (Community Screening & Gathering) -->
+          <div
+            onclick="openProjectModal('project3')"
+            class="project-card cursor-pointer activation rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandLime dark:hover:border-brandLime transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center"
+            >
+              <div
+                class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500"
+              >
+                <i class="fas fa-lightbulb text-5xl text-brandLime/40 mb-2"></i>
+                <p class="text-xs font-semibold">Foto Dokumentasi Event</p>
+              </div>
+              <div
+                class="absolute top-4 left-4 bg-brandLime/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Brand Activation
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandLime transition"
+              >
+                Community Screening & Gathering
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Penyelenggaraan event nonton bareng interaktif dengan kuis
+                trivia digital dan engagement ratusan komunitas.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i class="fas fa-users text-brandLime mr-1.5"></i> 300+
+                  Audiens</span
+                >
+                <span class="font-bold text-brandLime flex items-center gap-1"
+                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Workshop & MICE (Danantara Mentorship) -->
+          <div
+            onclick="openProjectModal('project4')"
+            class="project-card cursor-pointer workshop rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandCyan dark:hover:border-brandCyan transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+          >
+            <div class="h-60 relative overflow-hidden bg-slate-900">
+              <img
+                src="images/mntroship.JPG"
+                alt="Danantara Mentorship"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brandCyan/90 text-slate-950 font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Workshop & MICE
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandCyan transition"
+              >
+                Danantara Mentorship Program
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Pengelolaan sesi mentorship kepemimpinan korporasi, handling
+                registrasi digital barcode, LO VIP, dan kit acara.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i class="fas fa-building text-brandCyan mr-1.5"></i>
+                  Telkomsel Smart Office</span
+                >
+                <span class="font-bold text-brandCyan flex items-center gap-1"
+                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Event Crew (SPG, TL & Usher PRJ) -->
+          <div
+            onclick="openProjectModal('project5')"
+            class="project-card cursor-pointer crew rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandPurple dark:hover:border-brandPurpleSoft transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-60 relative overflow-hidden bg-slate-900">
+              <img
+                src="images/indihomjfk.jpeg"
+                alt="SPG TL Usher PRJ"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute top-4 left-4 bg-brandPurple text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Event Crew
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandPurple dark:group-hover:text-brandPurpleSoft transition"
+              >
+                SPG, TL, & Usher PRJ 2026
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Pengerahan dan manajemen kru lapangan selama 32 hari non-stop di
+                pameran terbesar Pekan Raya Jakarta.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i
+                    class="fas fa-calendar-days text-brandPurple dark:text-brandPurpleSoft mr-1.5"
+                  ></i>
+                  32 Hari Eksekusi</span
+                >
+                <span
+                  class="font-bold text-brandPurple dark:text-brandPurpleSoft flex items-center gap-1"
+                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Outsource (Long-Term Manpower Deployment) -->
+          <div
+            onclick="openProjectModal('project6')"
+            class="project-card cursor-pointer outsource rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-lg dark:shadow-none overflow-hidden hover:border-brandPink dark:hover:border-brandPink transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="h-60 bg-slate-100 dark:bg-slate-800 relative overflow-hidden flex items-center justify-center"
+            >
+              <div
+                class="text-center p-4 text-slate-400 dark:text-slate-500 group-hover:scale-105 transition duration-500"
+              >
+                <i class="fas fa-handshake text-5xl text-brandPink/40 mb-2"></i>
+                <p class="text-xs font-semibold">
+                  Dokumentasi Outsource Solution
+                </p>
+              </div>
+              <div
+                class="absolute top-4 left-4 bg-brandPink text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-md"
+              >
+                Outsourcing
+              </div>
+              <div
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/60 backdrop-blur-md text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-brandPink transition"
+              >
+                National Branch Outsource Staff
+              </h3>
+              <p
+                class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 font-normal"
+              >
+                Penyediaan tenaga kerja kontrak jangka panjang, manajemen
+                payroll terstruktur, dan controlling KPI rutin di multi cabang.
+              </p>
+              <div
+                class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium"
+              >
+                <span
+                  ><i class="fas fa-briefcase text-brandPink mr-1.5"></i>
+                  Kontrak Tahunan</span
+                >
+                <span class="font-bold text-brandPink flex items-center gap-1"
+                  >Detail Proyek <i class="fas fa-chevron-right text-[10px]"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+      class="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-400 pt-16 pb-12 border-t border-slate-200 dark:border-slate-800/80 text-sm transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+        >
+          <!-- Kolom 1: Brand & Social -->
+          <div class="space-y-4">
+            <a href="index.html" class="inline-block">
+              <img
+                src="assets/images/logos.png"
+                alt="SENA Logo"
+                class="h-9 w-auto object-contain dark:hidden"
+              />
+              <img
+                src="assets/images/logosputih.png"
+                alt="SENA Logo"
+                class="h-9 w-auto object-contain hidden dark:block"
+              />
+            </a>
+            <p
+              class="text-sm font-bold text-slate-500 dark:text-slate-400 leading-relaxed"
+            >
+              Saatnya bikin eventmu, jadi omongan!
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <a
+                href="https://instagram.com/senapro.id"
+                class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandPink hover:border-brandPink transition"
+              >
+                <i class="fab fa-instagram text-xs"></i>
+              </a>
+              <a
+                href="https://tiktok.com/senapro.id"
+                class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-brandCyan hover:border-brandCyan transition"
+              >
+                <i class="fab fa-tiktok text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Navigasi (Highlight Active Portfolio) -->
+          <div>
+            <h4
+              class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4"
+            >
+              Navigasi
+            </h4>
+            <ul class="space-y-2.5 text-xs">
+              <li>
+                <a href="index.html" class="hover:text-brandPink transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="hover:text-brandCyan transition"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-brandOrange transition"
+                  >Detail Layanan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="text-brandLime font-bold transition"
+                  >Portofolio Proyek</a
+                >
+              </li>
+              <li>
+                <a href="career.html" class="hover:text-brandPink transition"
+                  >Karir & Rekrutmen</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-brandPurpleSoft transition"
+                  >Hubungi Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Layanan Spesialisasi (5 Pilar Sinkron) -->
+          <div>
+            <h4
+              class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4"
+            >
+              Layanan Utama
+            </h4>
+            <ul class="space-y-2.5 text-xs">
+              <li>
+                <a
+                  href="services.html#outsource"
+                  class="hover:text-brandPink transition"
+                  >Outsourcing Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#booth"
+                  class="hover:text-brandOrange transition"
+                  >Custom Booth & Stage</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#activation"
+                  class="hover:text-brandLime transition"
+                  >Brand Activation & Sampling</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#crew"
+                  class="hover:text-brandPurpleSoft transition"
+                  >Event Crew & Talent</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#workshop"
+                  class="hover:text-brandCyan transition"
+                  >Corporate Workshop & MICE</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 4: Fast Response Kontak -->
+          <div>
+            <h4
+              class="text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider mb-4"
+            >
+              Fast Response
+            </h4>
+            <div class="space-y-3 text-xs">
+              <a
+                href="https://wa.me/628111199400"
+                target="_blank"
+                class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandLime transition"
+              >
+                <i class="fab fa-whatsapp text-brandLime text-base"></i>
+                <span>+628 1111 99 400</span>
+              </a>
+              <a
+                href="mailto:senapro.sba@gmail.com"
+                class="flex items-center gap-2.5 text-slate-600 dark:text-slate-400 hover:text-brandPink transition"
+              >
+                <i class="fas fa-envelope text-brandPink text-sm"></i>
+                <span>senapro.sba@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+          class="pt-8 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500"
+        >
+          <p>© 2026 SENA Barokah Abadi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= MODAL DETAIL PROYEK ================= -->
+    <div
+      id="projectModal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto bg-slate-950/80 backdrop-blur-md transition-all duration-300"
+    >
+      <!-- Backdrop Click Area -->
+      <div class="fixed inset-0" onclick="closeProjectModal()"></div>
+
+      <!-- Modal Content Box -->
+      <div
+        class="relative w-full max-w-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 my-8 overflow-hidden max-h-[90vh] flex flex-col"
+      >
+        <!-- Tombol Close (X) -->
+        <button
+          onclick="closeProjectModal()"
+          class="absolute top-5 right-5 w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brandPink hover:text-white dark:hover:bg-brandPink text-slate-500 dark:text-slate-400 flex items-center justify-center transition"
+        >
+          <i class="fas fa-xmark text-lg"></i>
+        </button>
+
+        <!-- Header Modal -->
+        <div class="mb-4 pr-12">
+          <span
+            id="modalBadge"
+            class="inline-block px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg mb-2"
+          >
+            Kategori
+          </span>
+          <h3
+            id="modalTitle"
+            class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white"
+          >
+            Nama Proyek
+          </h3>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="overflow-y-auto space-y-6 pr-2">
+          <!-- Foto Utama Besar -->
+          <div
+            class="w-full h-64 sm:h-80 rounded-2xl bg-slate-100 dark:bg-slate-800 overflow-hidden flex items-center justify-center border border-slate-200 dark:border-slate-800"
+          >
+            <img
+              id="modalMainImg"
+              src=""
+              alt="Main Preview"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Mini Galeri Foto Tambahan -->
+          <div>
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3"
+            >
+              Galeri Dokumentasi
+            </h4>
+            <div id="modalGalleryGrid" class="grid grid-cols-3 gap-3">
+              <!-- Gambar thumbnail di-generate via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Deskripsi & Scope of Work -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 text-xs"
+          >
+            <div>
+              <span class="text-slate-400 block mb-0.5">Lokasi Event:</span>
+              <strong
+                id="modalLocation"
+                class="text-slate-800 dark:text-slate-200"
+                >Jakarta</strong
+              >
+            </div>
+            <div>
+              <span class="text-slate-400 block mb-0.5">Scope of Work:</span>
+              <strong id="modalScope" class="text-slate-800 dark:text-slate-200"
+                >Manpower & TL</strong
+              >
+            </div>
+            <div>
+              <span class="text-slate-400 block mb-0.5">Klien / Brand:</span>
+              <strong
+                id="modalClient"
+                class="text-slate-800 dark:text-slate-200"
+                >Corporate FMCG</strong
+              >
+            </div>
+          </div>
+
+          <p
+            id="modalDesc"
+            class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"
+          >
+            Deskripsi detail event...
+          </p>
+        </div>
+
+        <!-- Footer Modal CTA -->
+        <div
+          class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-end"
+        >
+          <a
+            href="contact.html"
+            class="px-5 py-2.5 rounded-xl bg-brandPink text-white font-bold text-xs shadow-lg shadow-brandPink/30 hover:scale-105 transition flex items-center gap-2"
+          >
+            <i class="fab fa-whatsapp"></i> Rancang Proyek Seperti Ini
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <script>
-    // Database Konten Proyek untuk Modal Popup
-    const projectDetails = {
-      project1: {
-        title: "SPG Activation by.U",
-        badge: "Manpower & SPG",
-        badgeColor: "bg-cyan-100 text-brandCyan dark:bg-cyan-950/60",
-        location: "Jakarta, Bogor, Bandung (30 Titik)",
-        scope: "30 SPG Sales + 3 Team Leader",
-        client: "National Brand FMCG",
-        desc: "Eksekusi penyebaran tenaga promosi dan direct selling untuk kampanye brand retail. Mencakup seleksi fisik dan grooming, briefing product knowledge intensif, monitoring absensi digital, hingga rekapitulasi data penjualan harian yang mencapai 120% target.",
-        mainImg: "images/fotospg.jpeg", // Ganti dengan path foto utama
-        gallery: [
-          "images/fotospg.jpeg",
-          "images/fotospg.jpeg",
-          "images/fotospg.jpeg"
-        ]
-      },
-      project2: {
-        title: "Custom Exhibition Booth 6x6m",
-        badge: "Booth Production",
-        badgeColor: "bg-orange-100 text-brandOrange dark:bg-orange-950/60",
-        location: "JIEXPO Kemayoran, Jakarta",
-        scope: "Desain 3D + Fabrikasi Kayu Plywood + Listrik",
-        client: "Tech & Consumer Goods Expo",
-        desc: "Pembangunan booth pameran seluas 36m² menggunakan finishing duco matte, acrylic backlight signage, instalasi LED display interaktif, serta storage room VIP yang kokoh dan presisi.",
-        mainImg: "assets/images/logosena.png",
-        gallery: [
-          "assets/images/logosena.png",
-          "assets/images/logosena.png"
-        ]
-      }
-    };
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    // Fungsi Membuka Modal
-    function openProjectModal(projectId) {
-      const data = projectDetails[projectId];
-      if (!data) return;
-
-      document.getElementById('modalTitle').innerText = data.title;
-
-      const badgeEl = document.getElementById('modalBadge');
-      badgeEl.innerText = data.badge;
-      badgeEl.className = `inline-block px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg mb-2 ${data.badgeColor}`;
-
-      document.getElementById('modalLocation').innerText = data.location;
-      document.getElementById('modalScope').innerText = data.scope;
-      document.getElementById('modalClient').innerText = data.client;
-      document.getElementById('modalDesc').innerText = data.desc;
-      document.getElementById('modalMainImg').src = data.mainImg;
-
-      // Render Galeri Thumbnail
-      const galleryGrid = document.getElementById('modalGalleryGrid');
-      galleryGrid.innerHTML = '';
-      data.gallery.forEach(imgSrc => {
-        const imgThumb = document.createElement('img');
-        imgThumb.src = imgSrc;
-        imgThumb.className = 'w-full h-20 sm:h-24 object-cover rounded-xl cursor-pointer hover:opacity-80 transition border border-slate-200 dark:border-slate-800';
-        imgThumb.onclick = () => {
-          document.getElementById('modalMainImg').src = imgSrc;
-        };
-        galleryGrid.appendChild(imgThumb);
+    <script>
+      // 1. Inisialisasi AOS
+      AOS.init({
+        once: true,
+        duration: 800,
+        easing: "ease-out-cubic",
       });
 
-      const modal = document.getElementById('projectModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.style.overflow = 'hidden'; // Kunci scroll background
-    }
+      // 2. Toggle Mobile Menu
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
 
-    // Fungsi Menutup Modal
-    function closeProjectModal() {
-      const modal = document.getElementById('projectModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = 'auto'; // Aktifkan scroll kembali
-    }
+      // 3. Toggle Theme & Preference
+      function toggleTheme() {
+        const html = document.documentElement;
+        const icons = document.querySelectorAll(".theme-icon");
 
-    // Tutup modal jika tombol ESC ditekan
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeProjectModal();
-    });
-  </script>
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+          icons.forEach((icon) => {
+            icon.classList.remove("fa-moon", "text-amber-400");
+            icon.classList.add("fa-sun", "text-amber-500");
+          });
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+          icons.forEach((icon) => {
+            icon.classList.remove("fa-sun", "text-amber-500");
+            icon.classList.add("fa-moon", "text-amber-400");
+          });
+        }
+      }
 
-</body>
+      // Sinkronisasi ikon saat load pertama
+      document.addEventListener("DOMContentLoaded", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        const icons = document.querySelectorAll(".theme-icon");
+        icons.forEach((icon) => {
+          if (isDark) {
+            icon.classList.add("fa-moon", "text-amber-400");
+            icon.classList.remove("fa-sun", "text-amber-500");
+          } else {
+            icon.classList.add("fa-sun", "text-amber-500");
+            icon.classList.remove("fa-moon", "text-amber-400");
+          }
+        });
 
+        // Handle URL Parameter saat direct link dari halaman lain (contoh: portfolio.html?category=outsource)
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get("category");
+        if (categoryParam) {
+          filterProjects(categoryParam);
+        }
+      });
+
+      // 4. Filter Kategori Proyek Portofolio
+      function filterProjects(category, clickedBtn = null) {
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        // 1. Set status active pada tombol yang dipilih
+        if (clickedBtn) {
+          clickedBtn.classList.add("active");
+        } else {
+          buttons.forEach((btn) => {
+            const onclickAttr = btn.getAttribute("onclick");
+            const dataCat = btn.getAttribute("data-category");
+            if (
+              (onclickAttr && onclickAttr.includes(`'${category}'`)) ||
+              dataCat === category
+            ) {
+              btn.classList.add("active");
+            }
+          });
+        }
+
+        // 2. Filter kartu proyek sesuai kategori
+        const cards = document.querySelectorAll(".project-card");
+        cards.forEach((card) => {
+          if (category === "all" || card.classList.contains(category)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      // 5. Database Konten Proyek untuk Modal Popup
+      const projectDetails = {
+        project1: {
+          title: "SPG Activation by.U",
+          badge: "Event Crew & Talent",
+          badgeColor:
+            "bg-purple-100 text-brandPurple dark:bg-purple-950/60 dark:text-brandPurpleSoft",
+          location: "Jakarta, Bogor, Bandung (30 Titik)",
+          scope: "30 SPG Sales + 3 Team Leader",
+          client: "by.U (Telkomsel)",
+          desc: "Eksekusi penyebaran tenaga promosi dan direct selling untuk kampanye brand retail anak muda. Mencakup kurasi grooming, briefing product knowledge intensif, monitoring absensi harian, hingga rekapitulasi penjualan harian terukur.",
+          mainImg: "images/fotospg.jpeg",
+          gallery: ["images/fotospg.jpeg", "images/fotospg.jpeg"],
+        },
+        project2: {
+          title: "Custom Booth Exhibition by.U",
+          badge: "Booth & Stage",
+          badgeColor: "bg-orange-100 text-brandOrange dark:bg-orange-950/60",
+          location: "Jakarta",
+          scope: "Desain 3D + Fabrikasi 2 Lantai + Instalasi Neon Flex",
+          client: "by.U (Telkomsel)",
+          desc: "Pembangunan custom booth exhibition modular 2 lantai berstruktur kokoh dengan finishing rapi, tata pencahayaan neon flex presisi, dan zona interaktif untuk audiens.",
+          mainImg: "images/fotobooth.jpeg",
+          gallery: ["images/fotobooth.jpeg", "images/fotobooth.jpeg"],
+        },
+        project3: {
+          title: "Community Screening & Gathering",
+          badge: "Brand Activation",
+          badgeColor: "bg-lime-100 text-brandLime dark:bg-lime-950/60",
+          location: "Jakarta",
+          scope: "Konsep Acara + Interactive Kahoot Trivia + Stage Flow",
+          client: "MAXstream & Community Partner",
+          desc: "Penyelenggaraan acara nonton bareng eksklusif yang memadukan hiburan visual panggung dengan interaksi digital trivia berhadiah untuk mendongkrak partisipasi ratusan peserta.",
+          mainImg: "assets/images/og-preview.jpg",
+          gallery: ["assets/images/og-preview.jpg"],
+        },
+        project4: {
+          title: "Danantara Mentorship Program",
+          badge: "Workshop & MICE",
+          badgeColor: "bg-cyan-100 text-brandCyan dark:bg-cyan-950/60",
+          location: "Telkomsel Smart Office, Jakarta",
+          scope: "Web Check-In System + Protocol LO + Seminar Collateral",
+          client: "PT Telkomsel & Danantara Indonesia",
+          desc: "Pengelolaan alur registrasi digital presisi menggunakan custom web application barcode scanner, pendampingan keprotokolan pimpinan senior, penyusunan materi guidebook, dan koordinasi multimedia.",
+          mainImg: "images/mntroship.JPG",
+          gallery: ["images/mntroship.JPG", "images/mntroship.JPG"],
+        },
+        project5: {
+          title: "SPG, TL, & Usher PRJ 2026",
+          badge: "Event Crew & Talent",
+          badgeColor:
+            "bg-purple-100 text-brandPurple dark:bg-purple-950/60 dark:text-brandPurpleSoft",
+          location: "JIEXPO Kemayoran, Jakarta",
+          scope: "Manpower Deployment + Shift Scheduling + Supervisor Control",
+          client: "IndiHome / Corporate Partner",
+          desc: "Penyediaan dan supervisi penuh tim usher VIP, SPG sales, dan Team Leader selama 32 hari penuh pelaksanaan Pekan Raya Jakarta dengan zero-complaint operasional.",
+          mainImg: "images/indihomjfk.jpeg",
+          gallery: ["images/indihomjfk.jpeg", "images/indihomjfk.jpeg"],
+        },
+        project6: {
+          title: "National Branch Outsource Staff",
+          badge: "Outsourcing Solution",
+          badgeColor: "bg-pink-100 text-brandPink dark:bg-pink-950/60",
+          location: "Jabodetabek & Regional Office",
+          scope: "Long-term Contracting + Payroll System + KPI Controlling",
+          client: "Corporate B2B Partner",
+          desc: "Pengelolaan menyeluruh penempatan tenaga kerja terampil untuk kebutuhan operasional jangka panjang (bulanan hingga tahunan) dengan kepatuhan legalitas ketenagakerjaan dan jaminan backup talent.",
+          mainImg: "assets/images/og-preview.jpg",
+          gallery: ["assets/images/og-preview.jpg"],
+        },
+      };
+
+      // 6. Fungsi Membuka Modal
+      function openProjectModal(projectId) {
+        const data = projectDetails[projectId];
+        if (!data) return;
+
+        document.getElementById("modalTitle").innerText = data.title;
+
+        const badgeEl = document.getElementById("modalBadge");
+        badgeEl.innerText = data.badge;
+        badgeEl.className = `inline-block px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg mb-2 ${data.badgeColor}`;
+
+        document.getElementById("modalLocation").innerText = data.location;
+        document.getElementById("modalScope").innerText = data.scope;
+        document.getElementById("modalClient").innerText = data.client;
+        document.getElementById("modalDesc").innerText = data.desc;
+        document.getElementById("modalMainImg").src = data.mainImg;
+
+        // Render Galeri Thumbnail
+        const galleryGrid = document.getElementById("modalGalleryGrid");
+        galleryGrid.innerHTML = "";
+        data.gallery.forEach((imgSrc) => {
+          const imgThumb = document.createElement("img");
+          imgThumb.src = imgSrc;
+          imgThumb.className =
+            "w-full h-20 sm:h-24 object-cover rounded-xl cursor-pointer hover:opacity-80 transition border border-slate-200 dark:border-slate-800";
+          imgThumb.onclick = () => {
+            document.getElementById("modalMainImg").src = imgSrc;
+          };
+          galleryGrid.appendChild(imgThumb);
+        });
+
+        const modal = document.getElementById("projectModal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
+
+      // 7. Fungsi Menutup Modal
+      function closeProjectModal() {
+        const modal = document.getElementById("projectModal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "auto";
+      }
+
+      // Tutup modal jika tombol ESC ditekan
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeProjectModal();
+      });
+    </script>
+  </body>
 </html>
